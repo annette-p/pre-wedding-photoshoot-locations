@@ -1,3 +1,5 @@
+import { leafletAccessToken } from "./secrets";
+
 // Leaflet map
 let singapore = [1.29, 103.85]; // [ <lat>, <lng> ]
 let map = L.map("map");
@@ -12,6 +14,6 @@ L.tileLayer(
     id: "mapbox/streets-v11",
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: "to provide accessToken here", //demo access token
+    accessToken: leafletAccessToken, //demo access token
   }
 ).addTo(map);
