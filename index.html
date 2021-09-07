@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <!-- Leaflet CSS -->
+    <link href="CSS/leaflet.css" rel="stylesheet" />
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <title>Pre-Wedding Photoshoot Location</title>
+  </head>
+  <body>
+    <main>
+      <div class="main-section">
+        <!-- Search Navbar -->
+        <!-- navbar-light bg-transparent -->
+        <nav class="navbar top-50 start-50 translate-middle">
+          <div class="container-fluid mx-auto">
+            <h1>Pre-Wedding Shoot Locations</h1>
+            <p>EXPLORE SECRET NATURE SPOTS AND PARKS IN SINGAPORE</p>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Enter location or park e.g Fort Canning"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </nav>
+        <!-- End of Search Navbar -->
+
+        <!-- Carousel -->
+        <div
+          id="carouselExampleFade"
+          class="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div id="carousel-img1" class="carousel-item active">
+              <!-- <img
+          src="images/fort_canning_park.jpg"
+          class="d-block w-100"
+          alt="Fort Canning Park"
+        /> -->
+            </div>
+            <div id="carousel-img2" class="carousel-item">
+              <!-- <img
+          src="images/henderson_waves_bridge2.jpg"
+          class="d-block w-100"
+          alt="Henderson Waves Bridge"
+        /> -->
+            </div>
+            <div id="carousel-img3" class="carousel-item">
+              <!-- <img
+          src="images/henderson_waves_bridge3"
+          class="d-block w-100"
+          alt="Henderson Waves Bridge"
+        /> -->
+            </div>
+            <div id="carousel-img4" class="carousel-item">
+              <!-- <img
+          src="images/henderson_waves_bridge.jpg"
+          class="d-block w-100"
+          alt="Henderson Waves Bridge"
+        /> -->
+            </div>
+            <div id="carousel-img5" class="carousel-item">
+              <!-- <img
+          src="images/lower_peirce_reservoir.jpg"
+          class="d-block w-100"
+          alt="Lower Peirce Reservoir"
+        /> -->
+            </div>
+            <div id="carousel-img6" class="carousel-item">
+              <!-- <img
+          src="images/punggol_lalang_fields.jpg"
+          class="d-block w-100"
+          alt="Lower Peirce Reservoir"
+        /> -->
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- End of Carousel -->
+      </div>
+    </main>
+
+    <section>
+      <!-- Popular spots columns -->
+      <div class="container pt-2 ps-5 pt-lg-3 ps-lg-0">
+        <div id="popular-spot" class="row">
+          <div class="col order-last">
+            <!-- card 1 Lalang Field -->
+            <div class="card pb-lg-2 pt-lg-1" style="width: 18rem">
+              <img
+                src="images/pre-wedding_jurong_lake_gardens_lalang_field.jpg"
+                class="card-img-top"
+                alt="Jurong Lake Gardens Lalang Field"
+              />
+              <div class="card-body pt-lg-4">
+                <!-- <p class="card-text">Jurong Lake Gardens Lalang Field</p> -->
+                <a href="#" class="card-link"
+                  >Jurong Lake Gardens Lalang Field</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <!-- card 2 Lower Peirce Reservoir -->
+            <div class="card pb-lg-2 pt-md-2 pt-lg-1" style="width: 18rem">
+              <img
+                src="images/pre-wedding_lower_peirce_reservoir.png"
+                class="card-img-top"
+                alt="Lower Peirce Reservoir"
+              />
+              <div class="card-body pt-md-4 pt-lg-4">
+                <!-- <p class="card-text">Lower Peirce Reservoir</p> -->
+                <a href="#" class="card-link">Lower Peirce Reservoir</a>
+              </div>
+            </div>
+          </div>
+          <div class="col order-first">
+            <!-- card 3 Fort Canning Park -->
+            <div class="card" style="width: 18rem">
+              <img
+                src="images/pre-wedding_fort_canning_park2.jpg"
+                class="card-img-top"
+                alt="Fort Canning Park"
+              />
+              <div class="card-body">
+                <!-- <p class="card-text">Fort Canning Park</p> -->
+                <a href="#" class="card-link">Fort Canning Park</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of columns -->
+    </section>
+
+    <!-- Bootstrap js Bundle with Popper -->
+    <script src="script/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet js -->
+    <script src="script/leaflet.js"></script>
+    <!-- axios -->
+    <script src="script/axios.min.js"></script>
+    <!-- Custom script -->
+    <script src="script/script.js"></script>
+  </body>
+</html>

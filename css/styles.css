@@ -1,0 +1,85 @@
+.main-section {
+  position: relative;
+}
+
+.navbar {
+  position: absolute;
+  z-index: 15;
+}
+
+.container-fluid {
+  align-self: center;
+}
+
+p {
+  color: white;
+  font-weight: bold;
+}
+
+#carousel-img1 {
+  background-image: url("../images/fort_canning_park.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+#carousel-img2 {
+  background-image: url("../images/henderson_waves_bridge2.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+#carousel-img3 {
+  background-image: url("../images/henderson_waves_bridge3.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+#carousel-img4 {
+  background-image: url("../images/henderson_waves_bridge.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+#carousel-img5 {
+  background-image: url("../images/lower_peirce_reservoir.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+#carousel-img6 {
+  background-image: url("../images/punggol_lalang_fields.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+#popular-spot {
+  text-align: center;
+}
+
+.col {
+  padding-bottom: 15px;
+}
+
+/* ..........................style for map.html.................................... */
+#map {
+  height: 800px;
+  border: 1px solid black;
+}
+
+/* ..........................style for index.html.................................... */
+
+/* for iPad */
+@media (min-width: 768px) {
+  /* #popular-spot {
+    display: inline;
+  } */
+}
+
+/* .............................................................. */
+
+/* for laptop */
+@media (min-width: 992px) {
+  .d-flex {
+    width: 500px;
+  }
+}
