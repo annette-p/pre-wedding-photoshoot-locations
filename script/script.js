@@ -1,4 +1,4 @@
-import { leafletAccessToken } from "./secrets";
+import { leafletAccessToken } from "./secrets.js";
 
 // Leaflet map
 let singapore = [1.29, 103.85]; // [ <lat>, <lng> ]

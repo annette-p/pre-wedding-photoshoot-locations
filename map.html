@@ -9,11 +9,44 @@
     <link href="CSS/leaflet.css" rel="stylesheet" />
     <!-- custom CSS -->
     <link rel="stylesheet" href="CSS/styles.css" />
-    <title>Navigation Map Page</title>
+    <title>Map Navigation Page</title>
   </head>
   <body>
     <main>
-      <div id="map"></div>
+      <div class="map-container">
+        <!-- Navigation & Search bar -->
+        <div class="nav-container">
+          <div class="card-header">
+            <!-- Navbar tap -->
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="true" href="#">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Explore</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Hide</a>
+              </li>
+            </ul>
+            <!-- End of Navbar tap -->
+          </div>
+          <div class="card-body">
+            <!-- Search box -->
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <!-- Display search result -->
+            <div class="search-result-display"></div>
+            <ul>Result 1</ul>
+            <ul>Result 2</ul>
+            <ul>Result 3</ul>
+          </div>
+        </div>
+        <!-- map -->
+        <div id="map"></div>
+      </div>
     </main>
 
     <section>
@@ -27,6 +60,7 @@
     <!-- axios -->
     <script src="script/axios.min.js"></script>
     <!-- Custom script -->
-    <script src="script/script.js"></script>
+    <script type="module" src="data/main.map.js"></script> <!-- map - Leaflet -->
+    <script type="module" src="script/script.js"></script>
   </body>
 </html>
