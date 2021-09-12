@@ -1,5 +1,7 @@
 import { leafletAccessToken } from "./secrets.js";
 
+// Leaflet map: https://leafletjs.com/reference-1.7.1.html
+
 function mainMap() {
   let singapore = [1.29, 103.85]; // [ <lat>, <lng> ]
   let map = L.map("map");

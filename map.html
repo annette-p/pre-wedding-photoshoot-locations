@@ -34,8 +34,8 @@
           <div class="card-body">
             <!-- Search box -->
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <input id="search-input" class="form-control me-2" type="text" placeholder="Search" aria-label="Search"/>
+              <button id="search-btn" class="btn btn-outline-success">Search</button>
             </form>
             <!-- Display search result -->
             <div class="search-result-display"></div>
@@ -62,6 +62,7 @@
     <!-- Custom script -->
     <!-- <script src="data/secrets.js"></script> -->   <!-- use this if not using module -->
     <script type="module" src="data/main.map.js"></script> <!-- map: Leaflet -->
+    <script type="module" src="data/parks.views.js"></script> <!-- national park marker -->
     <script type="module" src="script/script.js"></script>
   </body>
 </html>
