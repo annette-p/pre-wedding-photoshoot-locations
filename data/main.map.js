@@ -19,3 +19,5 @@ function mainMap() {
   ).addTo(map);
   return map;
 }
+
+export { mainMap };
