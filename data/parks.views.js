@@ -14,7 +14,7 @@ function getParkNameFromDescription(parkDescription) {
 
 /* Search for the parks details based on user's query */
 async function searchParks(query) {
-  let response = await axios.get("data/n-parks.geojson");
+  let response = await axios.get(nparkAPI);
 
   // Store the parks that match user's query
   let filteredParks = [];
@@ -94,7 +94,7 @@ function addParksToSearchResultDisplay(parkData, searchResultLayer, map) {
 }
 
 async function addAllParks (map) {
-  let response = await axios.get("data/n-parks.geojson");
+  let response = await axios.get(nparkAPI);
   /* 
     Leaflet GeoJSON (to process the geojson file), using onEachFeature options
     ref: https://leafletjs.com/reference-1.7.1.html#geojson 
