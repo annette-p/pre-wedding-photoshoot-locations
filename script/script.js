@@ -12,8 +12,10 @@ window.addEventListener("DOMContentLoaded", async function () {
         !searchContainer.style.display
       ) {
         searchContainer.style.display = "block";
+        hide.innerHTML = "hide";
       } else {
         searchContainer.style.display = "none";
+        hide.innerHTML = "show";
       }
   });
 
@@ -24,30 +26,23 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   document.querySelector("#search-btn").
   addEventListener("click", async function (event) {
-    event.preventDefault()
+    event.preventDefault();
 
     let query = document.querySelector("#search-input").value;
 
-    /*
-    -----------------------------------------------------
-    */
-    // calling parks function
-    await filterParks(query, searchMapLayer, map);
+    // Perform search for parks based on user query, function searchParks gives array with sorted result 
+    let parkData = await searchParks(query);
+
+    // Plot the parks on map
+    addParksToMap(parkData, searchMapLayer, map);
+
+    // Display list of parks
+    let searchResultLayer = document.querySelector("#search-result-display");
+
+    addParksToSearchResultDisplay(parkData, searchResultLayer, map);
+
     // clear the search input
-    document.querySelector("#search-input").value = ""
-    
-    /*
-    // ** to hide the search result - not sure if necessary**
-    // if the search container is not being displayed at the moment, show it
-    if (
-      searchContainer.style.display == "none" ||
-      !searchContainer.style.display
-    ) {
-      searchContainer.style.display = "block";
-    } else {
-      searchContainer.style.display = "none";
-    }
-    */
+    document.querySelector("#search-input").value = "";
 
   });
 
