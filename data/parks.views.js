@@ -1,7 +1,12 @@
-// to add marker and display park names
+// function to add marker and display park names
 
 async function filterParks (query, searchMapLayer, map) {
   let response = await axios.get("data/n-parks.geojson");
+
+  // 1. to display the search result (add the result to search-result-display class)
+  let searchDisplay = document.querySelector("#search-result-display")
+  // remove from search result
+  searchDisplay.innerHTML = ""
 
   for (let park of response.data.features) {
 
@@ -18,9 +23,23 @@ async function filterParks (query, searchMapLayer, map) {
         // 7th elements of td represent the park's name
         let name = cells[6].innerHTML;
 
-        // plot the marker onto map layer with name pop up
-        let marker = L.marker([park.geometry.coordinates[1], park.geometry.coordinates[0]]).bindPopup(`<div><h5>${name}</h5></div>`);
-        searchMapLayer.addLayer(marker); 
+        // plot the marker using lat long onto the map layer with name pop up
+        let plotMarker = L.marker([park.geometry.coordinates[1], park.geometry.coordinates[0]]).bindPopup(`<div><h5>${name}</h5></div>`);
+        searchMapLayer.addLayer(plotMarker); 
+
+        // *****************************************
+        // is it better to put this block into script.js than the function??
+        // 1.1 to add the result into list 
+        let resultDisplay = document.createElement("div");
+        resultDisplay.innerHTML = name;
+        searchDisplay.appendChild(resultDisplay)
+        
+
+        // *** to fly to markers when click***
+        // searchDisplay.addEventListener("click", function () {
+        //   map.flyTo(plotMarker, 16);
+        //   marker.openPopup();
+        // });
 
         /*
         Leaflet Method (for LatLngBounds objects):
