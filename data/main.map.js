@@ -1,5 +1,3 @@
-import { leafletAccessToken } from "./secrets.js";
-
 // Leaflet map: https://leafletjs.com/reference-1.7.1.html
 
 function mainMap() {
@@ -21,5 +19,3 @@ function mainMap() {
   ).addTo(map);
   return map;
 }
-
-export { mainMap };

@@ -37,7 +37,7 @@ async function filterParks (query, searchMapLayer, map) {
         // to fly to markers when click
         resultDisplay.addEventListener("click", function () {
           map.flyTo([park.geometry.coordinates[1], park.geometry.coordinates[0]], 16);
-          marker.openPopup();
+          plotMarker.openPopup();
         });
 
     }
@@ -66,6 +66,3 @@ async function addAllParks (map) {
   });
   nationalParkLayer.addTo(map);
 }
-
-export { filterParks };
-// export { addAllParks };   -- to add **

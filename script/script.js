@@ -1,6 +1,3 @@
-import { mainMap } from "../data/main.map.js";
-import { filterParks } from "../data/parks.views.js"
-
 window.addEventListener("DOMContentLoaded", async function () {
   // calling leaflet map function
   let map = mainMap()
@@ -31,6 +28,9 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     let query = document.querySelector("#search-input").value;
 
+    /*
+    -----------------------------------------------------
+    */
     // calling parks function
     await filterParks(query, searchMapLayer, map);
     // clear the search input
@@ -48,7 +48,6 @@ window.addEventListener("DOMContentLoaded", async function () {
       searchContainer.style.display = "none";
     }
     */
-
 
   });
 
