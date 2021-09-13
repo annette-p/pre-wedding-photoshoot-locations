@@ -4,7 +4,6 @@ import { filterParks } from "../data/parks.views.js"
 window.addEventListener("DOMContentLoaded", async function () {
   // calling leaflet map function
   let map = mainMap()
-
   
   let hide = document.querySelector("#hide")
   let searchContainer = document.querySelector("#body-box")
@@ -48,7 +47,6 @@ window.addEventListener("DOMContentLoaded", async function () {
     } else {
       searchContainer.style.display = "none";
     }
-
     */
 
 

@@ -34,19 +34,12 @@ async function filterParks (query, searchMapLayer, map) {
         resultDisplay.innerHTML = name;
         searchDisplay.appendChild(resultDisplay)
         
+        // to fly to markers when click
+        resultDisplay.addEventListener("click", function () {
+          map.flyTo([park.geometry.coordinates[1], park.geometry.coordinates[0]], 16);
+          marker.openPopup();
+        });
 
-        // *** to fly to markers when click***
-        // searchDisplay.addEventListener("click", function () {
-        //   map.flyTo(plotMarker, 16);
-        //   marker.openPopup();
-        // });
-
-        /*
-        Leaflet Method (for LatLngBounds objects):
-        getBounds() returns LatLngBounds  // getCenter() returns LatLng
-        */
-        // ****TO DO - when click on search result > bring to marker 
-        let center = map.getBounds().getCenter();
     }
   }
   searchMapLayer.addTo(map);
