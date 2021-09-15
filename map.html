@@ -22,8 +22,25 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="true" href="#">Search</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Explore</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Explore
+                </a>
+                <!-- drop down list and radio buttons -->
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="explore" value="outdoor" checked/>
+                    <label class="form-check-label">Outdoor nature</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="explore" value="indoor"/>
+                    <label class="form-check-label">Indoor</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="explore" value="both"/>
+                    <label class="form-check-label">Both</label>
+                  </div>
+                </ul>
               </li>
               <li class="nav-item">
                 <a id="hide" class="nav-link" href="#">Hide</a>
@@ -37,10 +54,8 @@
               <input id="search-input" class="form-control me-2" type="text" placeholder="Search" aria-label="Search"/>
               <button id="search-btn" class="btn btn-outline-success">Search</button>
             </form>
-            <!-- Display Park search result -->
+            <!-- Display search result -->
             <div id="search-result-display"></div>
-            <!-- Display City search result -->
-            <div id="city-search-result-display"></div>
           </div>
         </div>
         <!-- map -->

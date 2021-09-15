@@ -29,40 +29,45 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     let query = document.querySelector("#search-input").value;
 
-    /* ...................................National Park...............................................*/
+    // to determine which explore options has been selected
+    let exploreOption = document.querySelector("input[name='explore']:checked").value;
 
-    // Perform search for parks based on user query, function searchParks gives array with sorted result 
-    let parkData = await searchParks(query);
-    // Plot the parks on map
-    addParksToMap(parkData, searchMapLayer, map);
+    if (exploreOption === "outdoor") {
 
-    // Display list of parks
-    let searchResultLayer = document.querySelector("#search-result-display");
+      /* ...................................National Park...............................................*/
 
-    addParksToSearchResultDisplay(parkData, searchResultLayer, map);
+      // Perform search for parks based on user query, function searchParks gives array with sorted result 
+      let parkData = await searchParks(query);
+      // Plot the parks on map
+      addParksToMap(parkData, searchMapLayer, map);
+
+      // Display list of parks
+      let searchResultLayer = document.querySelector("#search-result-display");
+
+      addParksToSearchResultDisplay(parkData, searchResultLayer, map);
+
+    }
+
+    if (exploreOption === "indoor") {
+
+      /* ...................................Places Location...............................................*/
+
+      let citySearchMapLayer = L.layerGroup();
+
+      /* 
+      Leaflet Method (for LatLngBounds objects):
+      getBounds() returns LatLngBounds  // getCenter() returns LatLng
+      */
+      let center = map.getBounds().getCenter();
+      let cityData = await search(center.lat, center.lng, query);
+
+      // calling function to add city location to map & display search result 
+      addCitySearchResults(cityData, citySearchMapLayer, map);
+    }
 
     // clear the search input
     document.querySelector("#search-input").value = "";
 
   });
-
-  /* ...................................Places Location...............................................*/
-
-  let citySearchMapLayer = L.layerGroup();
-  document.querySelector("#search-btn").addEventListener("click", async function () {
-    let query = document.querySelector("#search-input").value;
-
-    /* 
-    Leaflet Method (for LatLngBounds objects):
-    getBounds() returns LatLngBounds  // getCenter() returns LatLng
-    */
-    let center = map.getBounds().getCenter();
-    let cityData = await search(center.lat, center.lng, query);
-
-    // using fuction that is modify and update the map
-    addCitySearchResults(cityData, citySearchMapLayer, map);
-  }); 
-
-  // ** why it is depends on National Park block code >> if comment this block code, 4square Places Location doesn't work **
 
 });
