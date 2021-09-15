@@ -37,8 +37,10 @@
               <input id="search-input" class="form-control me-2" type="text" placeholder="Search" aria-label="Search"/>
               <button id="search-btn" class="btn btn-outline-success">Search</button>
             </form>
-            <!-- Display search result -->
+            <!-- Display Park search result -->
             <div id="search-result-display"></div>
+            <!-- Display City search result -->
+            <div id="city-search-result-display"></div>
           </div>
         </div>
         <!-- map -->
@@ -61,6 +63,8 @@
     <script src="data/secrets.js"></script>
     <script src="data/main.map.js"></script> <!-- map: Leaflet -->
     <script src="data/parks.views.js"></script> <!-- national park marker -->
+    <script src="data/four-square.data.js"></script> <!-- Four-Square API data --> 
+    <script src="data/places.location.view.js"></script> <!-- City Location (FourSquare) marker -->
     <script src="script/script.js"></script>
   </body>
 </html>

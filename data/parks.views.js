@@ -68,7 +68,6 @@ function addParksToSearchResultDisplay(parkData, searchResultLayer, map) {
   searchResultLayer.innerHTML = ""
 
   for (let park of parkData) {
-
     // Extract park's "Name" from park's description
     let parkDesc = park.properties.Description;
     let name = getParkNameFromDescription(parkDesc);
