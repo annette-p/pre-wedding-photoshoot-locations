@@ -20,13 +20,11 @@
             <!-- Navbar tap -->
             <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="true" href="#">Search</a>
+                <a class="nav-link" aria-current="true">Search</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Explore
-                </a>
-                <!-- drop down list and radio buttons -->
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Explore</a>
+                <!-- drop down list and radio buttons --> 
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="explore" value="outdoor" checked/>
@@ -49,11 +47,32 @@
             <!-- End of Navbar tap -->
           </div>
           <div id="body-box" class="card-body">
-            <!-- Search box -->
+            <!-- Search: input box & button -->
             <form class="d-flex">
               <input id="search-input" class="form-control me-2" type="text" placeholder="Search" aria-label="Search"/>
               <button id="search-btn" class="btn btn-outline-success">Search</button>
             </form>
+            <!-- Toggle view by & recommendation -->
+            <div id="toggle-view-recom">
+              <h5>Toggle view by:</h5>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="toggle" value="region"/>
+                <label class="form-check-label">By region</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="toggle" value="radius"/>
+                <label class="form-check-label">Within 500 meters radius</label>
+              </div>
+              <h5>View Recommend:</h5>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="recommend" value="outdoor-spots"/>
+                <label class="form-check-label">Outdoor famous spots</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="recommend" value="indoor-spots"/>
+                <label class="form-check-label">Indoor famous spots</label>
+              </div>
+            </div>
             <!-- Display search result -->
             <div id="search-result-display"></div>
           </div>
