@@ -67,6 +67,9 @@ function addParksToSearchResultDisplay(parkData, searchResultLayer, map) {
   // remove from search result
   searchResultLayer.innerHTML = ""
 
+  // for radius circle overlay layer
+  let circleGroup = L.layerGroup();
+
   for (let park of parkData) {
     // Extract park's "Name" from park's description
     let parkDesc = park.properties.Description;
@@ -80,8 +83,21 @@ function addParksToSearchResultDisplay(parkData, searchResultLayer, map) {
     resultDisplay.addEventListener("click", function () {
       map.flyTo([park.geometry.coordinates[1], park.geometry.coordinates[0]], 16);
       park.marker.openPopup();
+
+      // clear existing overlay for radius circle
+      circleGroup.clearLayers();
+
+      // create within 500 meter radius circle
+      let circle = L.circle([park.geometry.coordinates[1], park.geometry.coordinates[0]], {
+        color: "red",
+        fillColor: "orange",
+        fillOpacity: 0.5,
+        radius: 500,
+      });
+      circle.addTo(circleGroup);
     });
 
+    map.addLayer(circleGroup)
   }
 
   // Fly to first park in search result

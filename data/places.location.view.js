@@ -5,6 +5,9 @@ function addCitySearchResults(cityData, citySearchMapLayer, map) {
   // remove from search result div
   citySearchElement.innerHTML = "";
 
+  // for radius circle overlay layer
+  let circleGroup = L.layerGroup();
+
   for (let eachVenue of cityData) {
     let cityCoordinate = [eachVenue.location.lat, eachVenue.location.lng];
     let cityMarker = L.marker(cityCoordinate);
@@ -19,12 +22,26 @@ function addCitySearchResults(cityData, citySearchMapLayer, map) {
     let cityResultDisplay = document.createElement("div");
     cityResultDisplay.innerHTML = eachVenue.name;
 
+    // fly to location upon click
     cityResultDisplay.addEventListener("click", function () {
       map.flyTo(cityCoordinate, 16);
       cityMarker.openPopup();
+
+      // clear existing overlay for radius circle
+      circleGroup.clearLayers();
+
+      // create within 500 meter radius circle
+      let circle = L.circle(cityCoordinate, {
+        color: "red",
+        fillColor: "orange",
+        fillOpacity: 0.5,
+        radius: 500,
+      });
+      circle.addTo(circleGroup);
     });
 
     citySearchElement.appendChild(cityResultDisplay);
+    map.addLayer(circleGroup)
   }
 
   map.addLayer(citySearchMapLayer);
