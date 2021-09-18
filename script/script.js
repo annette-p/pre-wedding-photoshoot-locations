@@ -19,6 +19,26 @@ window.addEventListener("DOMContentLoaded", async function () {
       }
   });
 
+  // to display the Toggle search & recommendation when click on explore tab
+  let exploreTab = document.querySelector("#navbarDropdown")
+  let toggleTab = document.querySelector("#toggle-view-recom")
+  exploreTab.addEventListener ("click", function () {
+    if (
+      toggleTab.style.display == "none" ||
+      !toggleTab.style.display
+    ) {
+      toggleTab.style.display = "block";
+    } else {
+      toggleTab.style.display = "none";
+    }
+  });
+
+  // to hide the Toggle search & recommendation when click on search tab
+  let searchTab = document.querySelector("#search")
+  searchTab.addEventListener ("click", function () {
+    toggleTab.style.display = "none";
+  });
+
   /* 
   group several layers to added or removed on the map later on using Leaflet LayerGroup
   */
