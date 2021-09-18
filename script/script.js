@@ -23,14 +23,7 @@ window.addEventListener("DOMContentLoaded", async function () {
   let exploreTab = document.querySelector("#navbarDropdown")
   let toggleTab = document.querySelector("#toggle-view-recom")
   exploreTab.addEventListener ("click", function () {
-    if (
-      toggleTab.style.display == "none" ||
-      !toggleTab.style.display
-    ) {
-      toggleTab.style.display = "block";
-    } else {
-      toggleTab.style.display = "none";
-    }
+    toggleTab.style.display = "block";
   });
 
   // to hide the Toggle search & recommendation when click on search tab
