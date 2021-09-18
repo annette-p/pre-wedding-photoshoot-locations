@@ -59,6 +59,11 @@ p {
   background-color: rgba(218, 216, 216, 0.82);
 }
 
+#search-result-display {
+  overflow-y: auto;
+  max-height:200px;
+}
+
 #map {
   height: 800px;
   border: 1px solid black;

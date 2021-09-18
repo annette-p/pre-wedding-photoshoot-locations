@@ -19,14 +19,14 @@ window.addEventListener("DOMContentLoaded", async function () {
       }
   });
 
-  // to display the Toggle search & recommendation when click on explore tab
+  // to display the Toggle search & recommendation when click explore tab
   let exploreTab = document.querySelector("#navbarDropdown")
   let toggleTab = document.querySelector("#toggle-view-recom")
   exploreTab.addEventListener ("click", function () {
     toggleTab.style.display = "block";
   });
 
-  // to hide the Toggle search & recommendation when click on search tab
+  // to hide the Toggle search & recommendation when click search tab
   let searchTab = document.querySelector("#search")
   searchTab.addEventListener ("click", function () {
     toggleTab.style.display = "none";
