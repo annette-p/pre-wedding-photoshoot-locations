@@ -3,8 +3,8 @@ function addLocationsToMap(locationData, mapLayer, map) {
   mapLayer.clearLayers();
   for (let location of locationData) {
 
-    // plot the marker using lat-long onto the map layer with name pop up
-    let plotMarker = L.marker(location.coordinates).bindPopup(`<div><h5>${location.name}</h5></div>`);
+    // plot the marker and add tooltip using lat-long onto the map layer with name pop up
+    let plotMarker = L.marker(location.coordinates, {"title": location.name}).bindPopup(`<div><h5>${location.name}</h5></div>`);
     mapLayer.addLayer(plotMarker);
 
     // store reference to marker in Location object
