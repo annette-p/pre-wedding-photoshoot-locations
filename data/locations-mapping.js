@@ -4,7 +4,14 @@ function addLocationsToMap(locationData, mapLayer, map) {
   for (let location of locationData) {
 
     // plot the marker and add tooltip using lat-long onto the map layer with name pop up
-    let plotMarker = L.marker(location.coordinates, {"title": location.name}).bindPopup(`<div><h5>${location.name}</h5></div>`);
+    // the image will be displayed if it is available
+    let popupContent;
+    if (location.image == undefined) {
+      popupContent = `<div><h5>${location.name}</h5></div>`;
+    } else {
+      popupContent = `<div><h5>${location.name}</h5><img src="${location.image}" style="width:50%"/></div>`;
+    }
+    let plotMarker = L.marker(location.coordinates, {"title": location.name}).bindPopup(popupContent);
     mapLayer.addLayer(plotMarker);
 
     // store reference to marker in Location object

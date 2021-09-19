@@ -3,12 +3,13 @@ create class as template to get common info(attribute) from them to present in t
 This custom "Location" class to present each location data from different or multiple data sources (have different data structure)
 */
 class Location {
-  constructor(name, latitude, longitude) {
+  constructor(name, latitude, longitude, image=undefined) {
     this.name = name;
     this.latitude = latitude;
     this.longitude = longitude;
     // combine latlong 
     this.coordinates = [this.latitude, this.longitude];
+    this.image = image;
     this.marker = undefined;
   }
 }
@@ -96,6 +97,26 @@ async function searchNParks(query) {
   }
   // sort the array 
   return sortLocationsByName(filteredParks);
+}
+
+/* ...................................Attraction/Famous Spots .........................................*/
+
+/* Retrieve location data of attraction spots based on location type (indoor or outdoor) */
+async function searchAttractions(locationType) {
+  let response = await axios.get(attractionsAPI);
+
+  // Store the parks that match user's query
+  let filteredAttractions = [];
+  for (let attraction of response.data) {
+    if (attraction.type === locationType) {
+      // create new Location object (using the class)
+      filteredAttractions.push(
+        new Location(attraction.name, attraction.latitude, attraction.longitude, attraction.image)
+      );
+    }
+  }
+  // sort the array 
+  return sortLocationsByName(filteredAttractions);
 }
 
 /* ..............................................................................................*/

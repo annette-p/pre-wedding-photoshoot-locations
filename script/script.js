@@ -42,10 +42,28 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   // for radius circle overlay layer
   let circleGroupLayer = L.layerGroup();
-  
+
   map.addLayer(circleGroupLayer)
   map.addLayer(citySearchMapLayer)
   map.addLayer(parkSearchMapLayer)
+
+  /* display famous indoor spots */
+  let indoorFamousSpotsLayer = L.layerGroup();
+  // TODO - to place this in the "click" event listener of desired DOM element
+  await searchAttractions("indoor")
+  .then( (attractionData) => {
+    addLocationsToMap(attractionData, indoorFamousSpotsLayer, map);
+  } );
+  map.addLayer(indoorFamousSpotsLayer)
+
+  /* display famous outdoor spots */
+  let outdoorFamousSpotsLayer = L.layerGroup();
+  // TODO - to place this in the "click" event listener of desired DOM element
+  await searchAttractions("outdoor")
+  .then( (attractionData) => {
+    addLocationsToMap(attractionData, outdoorFamousSpotsLayer, map);
+  } );
+  map.addLayer(outdoorFamousSpotsLayer)
 
   document.querySelector("#search-btn").addEventListener("click", async function (event) {
     event.preventDefault();
