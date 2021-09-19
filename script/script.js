@@ -19,14 +19,14 @@ window.addEventListener("DOMContentLoaded", async function () {
       }
   });
 
-  // to display the Toggle search & recommendation when click explore tab
+  // to display the Toggle search & recommendation when click on explore tab
   let exploreTab = document.querySelector("#navbarDropdown")
   let toggleTab = document.querySelector("#toggle-view-recom")
   exploreTab.addEventListener ("click", function () {
     toggleTab.style.display = "block";
   });
 
-  // to hide the Toggle search & recommendation when click search tab
+  // to hide the Toggle search & recommendation when click on search tab
   let searchTab = document.querySelector("#search")
   searchTab.addEventListener ("click", function () {
     toggleTab.style.display = "none";
@@ -45,38 +45,42 @@ window.addEventListener("DOMContentLoaded", async function () {
     // to determine which explore options has been selected
     let exploreOption = document.querySelector("input[name='explore']:checked").value;
 
-    if (exploreOption === "outdoor") {
+    // to store both parks and city location 
+    let locationData = [];
 
-      /* ...................................National Park...............................................*/
+    /* ...................................National Park Location...........................................*/
 
-      // Perform search for parks based on user query, function searchParks gives array with sorted result 
-      let parkData = await searchParks(query);
-      // Plot the parks on map
-      addParksToMap(parkData, searchMapLayer, map);
-
-      // Display list of parks
-      let searchResultLayer = document.querySelector("#search-result-display");
-
-      addParksToSearchResultDisplay(parkData, searchResultLayer, map);
-
+    if (exploreOption === "outdoor" || exploreOption === "both") {
+      await searchNParks(query)
+      // parkData is new variable / aka let parkData = await searchNParks(query)
+      .then( (parkData) => {
+        addLocationsToMap(parkData, searchMapLayer, map);  // plot marker onto the map 
+        locationData = locationData.concat(parkData);  // combine 2 arrays data
+      } );
     }
 
-    if (exploreOption === "indoor") {
+    /* ...................................Places Location...............................................*/
 
-      /* ...................................Places Location...............................................*/
-
-      let citySearchMapLayer = L.layerGroup();
-
+    if (exploreOption === "indoor" || exploreOption === "both") {
       /* 
       Leaflet Method (for LatLngBounds objects):
       getBounds() returns LatLngBounds  // getCenter() returns LatLng
       */
       let center = map.getBounds().getCenter();
-      let cityData = await search(center.lat, center.lng, query);
+      let cityData = await searchLocations(center.lat, center.lng, query);
 
-      // calling function to add city location to map & display search result 
-      addCitySearchResults(cityData, citySearchMapLayer, map);
+      let citySearchMapLayer = L.layerGroup();
+      addLocationsToMap(cityData, citySearchMapLayer, map);  // plot marker onto the map  
+
+      locationData = locationData.concat(cityData);
     }
+
+    /* ................................display result of search locations....................................*/
+
+    // Display list of locations (can be outdoor + indoor)
+    locationData = sortLocationsByName(locationData); // sorted both again by name alphabetically 
+    let searchResultLayer = document.querySelector("#search-result-display");
+    addLocationsToSearchResultDisplay(locationData, searchResultLayer, map)
 
     // clear the search input
     document.querySelector("#search-input").value = "";
