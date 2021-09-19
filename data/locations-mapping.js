@@ -14,12 +14,9 @@ function addLocationsToMap(locationData, mapLayer, map) {
 }
 
 // to add search result to display container (locationData is an array of objects from Location class)
-function addLocationsToSearchResultDisplay(locationData, searchResultLayer, map) {
+function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searchResultLayer, map) {
   // remove from search result
   searchResultLayer.innerHTML = ""
-
-  // for radius circle overlay layer
-  let circleGroup = L.layerGroup();
 
   for (let location of locationData) {
     let resultDisplay = document.createElement("div");
@@ -33,7 +30,7 @@ function addLocationsToSearchResultDisplay(locationData, searchResultLayer, map)
       // console.log(location.marker.getLatLng());
 
       // clear existing overlay for radius circle
-      circleGroup.clearLayers();
+      circleGroupLayer.clearLayers();
 
       // create within 500 meter radius circle
       let circle = L.circle(location.coordinates, {
@@ -42,12 +39,12 @@ function addLocationsToSearchResultDisplay(locationData, searchResultLayer, map)
         fillOpacity: 0.5,
         radius: 500,
       });
-      circle.addTo(circleGroup);
+      circle.addTo(circleGroupLayer);
     });
     
   }
 
-  map.addLayer(circleGroup)
+  
 
   // Fly to first Location in the search result
   if (locationData.length > 0) {

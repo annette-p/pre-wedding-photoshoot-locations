@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", async function () {
   let exploreTab = document.querySelector("#explore-tab")
   let toggleTab = document.querySelector("#toggle-view-recom")
   let searchForm = document.querySelector("#toggle-search-form")
-  
+
   exploreTab.addEventListener ("click", function () {
     toggleTab.style.display = "block";
     searchForm.style.display = "none";
@@ -40,6 +40,10 @@ window.addEventListener("DOMContentLoaded", async function () {
   group several layers to added or removed on the map later on using Leaflet LayerGroup
   */
   let searchMapLayer = L.layerGroup();
+
+  // for radius circle overlay layer
+  let circleGroupLayer = L.layerGroup();
+  map.addLayer(circleGroupLayer)
 
   document.querySelector("#search-btn").addEventListener("click", async function (event) {
     event.preventDefault();
@@ -84,7 +88,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     // Display list of locations (can be outdoor + indoor)
     locationData = sortLocationsByName(locationData); // sorted both again by name alphabetically 
     let searchResultLayer = document.querySelector("#search-result-display");
-    addLocationsToSearchResultDisplay(locationData, searchResultLayer, map)
+    addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searchResultLayer, map)
 
     // clear the search input
     document.querySelector("#search-input").value = "";
