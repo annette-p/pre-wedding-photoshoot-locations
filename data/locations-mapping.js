@@ -10,7 +10,6 @@ function addLocationsToMap(locationData, mapLayer, map) {
     // store reference to marker in Location object
     location.marker = plotMarker;
   }
-  mapLayer.addTo(map);
 }
 
 // to add search result to display container (locationData is an array of objects from Location class)
@@ -43,8 +42,6 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
     });
     
   }
-
-  
 
   // Fly to first Location in the search result
   if (locationData.length > 0) {

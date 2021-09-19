@@ -36,17 +36,24 @@ window.addEventListener("DOMContentLoaded", async function () {
     searchForm.style.display = "block";
   });
 
-  /* 
-  group several layers to added or removed on the map later on using Leaflet LayerGroup
-  */
-  let searchMapLayer = L.layerGroup();
+  /* group several layers to added or removed on the map later on using Leaflet LayerGroup */
+  let parkSearchMapLayer = L.layerGroup();
+  let citySearchMapLayer = L.layerGroup();
 
   // for radius circle overlay layer
   let circleGroupLayer = L.layerGroup();
+  
   map.addLayer(circleGroupLayer)
+  map.addLayer(citySearchMapLayer)
+  map.addLayer(parkSearchMapLayer)
 
   document.querySelector("#search-btn").addEventListener("click", async function (event) {
     event.preventDefault();
+
+    // clear layers
+    parkSearchMapLayer.clearLayers();
+    citySearchMapLayer.clearLayers();
+    circleGroupLayer.clearLayers();
 
     let query = document.querySelector("#search-input").value;
 
@@ -62,7 +69,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       await searchNParks(query)
       // parkData is new variable / aka let parkData = await searchNParks(query)
       .then( (parkData) => {
-        addLocationsToMap(parkData, searchMapLayer, map);  // plot marker onto the map 
+        addLocationsToMap(parkData, parkSearchMapLayer, map);  // plot marker onto the map 
         locationData = locationData.concat(parkData);  // combine 2 arrays data
       } );
     }
@@ -77,7 +84,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       let center = map.getBounds().getCenter();
       let cityData = await searchLocations(center.lat, center.lng, query);
 
-      let citySearchMapLayer = L.layerGroup();
+      
       addLocationsToMap(cityData, citySearchMapLayer, map);  // plot marker onto the map  
 
       locationData = locationData.concat(cityData);
