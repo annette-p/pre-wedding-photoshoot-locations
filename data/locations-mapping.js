@@ -39,6 +39,7 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
         radius: 500,
       });
       circle.addTo(circleGroupLayer);
+      circle.bindPopup(`<h6>within 500m from ${location.name}</h6>`)
     });
     
   }
