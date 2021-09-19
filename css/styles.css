@@ -59,6 +59,15 @@ p {
   background-color: rgba(218, 216, 216, 0.82);
 }
 
+.form-check-label {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+#toggle-view-recom {
+  display: none;
+}
+
 #search-result-display {
   overflow-y: auto;
   max-height:200px;

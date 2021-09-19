@@ -22,23 +22,8 @@
               <li class="nav-item">
                 <a class="nav-link" id="search" aria-current="true">Search</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Explore</a>
-                <!-- drop down list and radio buttons --> 
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="explore" value="outdoor" checked/>
-                    <label class="form-check-label">Outdoor nature</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="explore" value="indoor"/>
-                    <label class="form-check-label">Indoor</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="explore" value="both"/>
-                    <label class="form-check-label">Both</label>
-                  </div>
-                </ul>
+              <li class="nav-item">
+                <a id="explore-tab" class="nav-link" href="#">Explore</a>
               </li>
               <li class="nav-item">
                 <a id="hide" class="nav-link" href="#">Hide</a>
@@ -48,17 +33,21 @@
           </div>
           <div id="body-box" class="card-body">
             <!-- Search: input box & button -->
-            <form class="d-flex">
-              <input id="search-input" class="form-control me-2" type="text" placeholder="Search" aria-label="Search"/>
-              <button id="search-btn" class="btn btn-outline-success">Search</button>
-            </form>
+            <div id="toggle-search-form">
+              <label class="form-check-label"><b>Location Type:</b></label>
+              <input class="form-check-input" type="radio" name="explore" value="outdoor" checked/>
+              <label class="form-check-label">Outdoor nature</label>
+              <input class="form-check-input" type="radio" name="explore" value="indoor"/>
+              <label class="form-check-label">Indoor</label>
+              <input class="form-check-input" type="radio" name="explore" value="both"/>
+              <label class="form-check-label">Both</label>
+              <form class="d-flex">
+                <input id="search-input" class="form-control me-2" type="text" placeholder="Search" aria-label="Search"/>
+                <button id="search-btn" class="btn btn-outline-success">Search</button>
+              </form>
+            </div>
             <!-- Toggle view by & recommendation -->
             <div id="toggle-view-recom">
-              <h5>Toggle view by:</h5>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="toggle" value="region"/>
-                <label class="form-check-label">By region</label>
-              </div>
               <h5>View Recommend:</h5>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="recommend" value="outdoor-spots"/>
