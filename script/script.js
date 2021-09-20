@@ -7,15 +7,15 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     // to hide the card box body
     hide.addEventListener ("click", function () {
-      if (
-        searchContainer.style.display == "none" ||
-        !searchContainer.style.display
-      ) {
+      if (!searchContainer.style.display) {
+        searchContainer.style.display = "none";
+        hide.innerHTML = "Show";
+      } else if (searchContainer.style.display == "none") {
         searchContainer.style.display = "block";
-        hide.innerHTML = "hide";
+        hide.innerHTML = "Hide";
       } else {
         searchContainer.style.display = "none";
-        hide.innerHTML = "show";
+        hide.innerHTML = "Show";
       }
   });
 
