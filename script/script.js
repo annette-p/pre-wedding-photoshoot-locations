@@ -49,21 +49,17 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   /* display famous indoor spots */
   let indoorFamousSpotsLayer = L.layerGroup();
-  // TODO - to place this in the "click" event listener of desired DOM element
   await searchAttractions("indoor")
   .then( (attractionData) => {
     addLocationsToMap(attractionData, indoorFamousSpotsLayer, map);
   } );
-  map.addLayer(indoorFamousSpotsLayer)
 
   /* display famous outdoor spots */
   let outdoorFamousSpotsLayer = L.layerGroup();
-  // TODO - to place this in the "click" event listener of desired DOM element
   await searchAttractions("outdoor")
   .then( (attractionData) => {
     addLocationsToMap(attractionData, outdoorFamousSpotsLayer, map);
   } );
-  map.addLayer(outdoorFamousSpotsLayer)
 
   document.querySelector("#search-btn").addEventListener("click", async function (event) {
     event.preventDefault();
@@ -117,7 +113,25 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     // clear the search input
     document.querySelector("#search-input").value = "";
-
   });
 
+  /* ...................................Famouse Spots ...........................................*/
+  document.querySelector("input[name=recommend-outdoor]").addEventListener("change", function (event) {
+    if (this.checked) {
+      map.addLayer(outdoorFamousSpotsLayer)
+    } else {
+      map.removeLayer(outdoorFamousSpotsLayer)
+    }
+  });
+
+  document.querySelector("input[name=recommend-indoor]").addEventListener("change", function (event) {
+    if (this.checked) {
+      map.addLayer(indoorFamousSpotsLayer)
+    } else {
+      map.removeLayer(indoorFamousSpotsLayer)
+    }
+  });
+
+  
+  
 });
