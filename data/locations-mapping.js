@@ -55,6 +55,19 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
   if (locationData.length > 0) {
     map.flyTo(locationData[0].coordinates, 16);
     locationData[0].marker.openPopup();
+
+    // clear existing overlay for radius circle
+    circleGroupLayer.clearLayers();
+
+    // show within 500 meter radius circle
+    let circle = L.circle(locationData[0].coordinates, {
+      color: "red",
+      fillColor: "orange",
+      fillOpacity: 0.5,
+      radius: 500,
+    });
+    circle.addTo(circleGroupLayer);
+    circle.bindPopup(`<h6>within 500m from ${locationData[0].name}</h6>`)
   }
 
 }
