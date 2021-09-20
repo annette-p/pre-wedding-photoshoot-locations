@@ -61,6 +61,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     addLocationsToMap(attractionData, outdoorFamousSpotsLayer, map);
   } );
 
+  /* ...................................Event Listener for Navbar...........................................*/
   document.querySelector("#search-btn").addEventListener("click", async function (event) {
     event.preventDefault();
 
@@ -115,7 +116,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     document.querySelector("#search-input").value = "";
   });
 
-  /* ...................................Famouse Spots ...........................................*/
+  /* ............................Event Listener for View Recommendation ...................................*/
   document.querySelector("input[name=recommend-outdoor]").addEventListener("change", function (event) {
     if (this.checked) {
       map.addLayer(outdoorFamousSpotsLayer)

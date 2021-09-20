@@ -43,10 +43,10 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
         color: "red",
         fillColor: "orange",
         fillOpacity: 0.5,
-        radius: 500,
+        radius: 1000,
       });
       circle.addTo(circleGroupLayer);
-      circle.bindPopup(`<h6>within 500m from ${location.name}</h6>`)
+      circle.bindPopup(`<h6>within 1km from ${location.name}</h6>`)
     });
     
   }
@@ -64,10 +64,10 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
       color: "red",
       fillColor: "orange",
       fillOpacity: 0.5,
-      radius: 500,
+      radius: 1000,
     });
     circle.addTo(circleGroupLayer);
-    circle.bindPopup(`<h6>within 500m from ${locationData[0].name}</h6>`)
+    circle.bindPopup(`<h6>within 1km from ${locationData[0].name}</h6>`)
   }
 
 }
