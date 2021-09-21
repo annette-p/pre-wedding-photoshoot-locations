@@ -38,7 +38,8 @@ async function searchLocations(lat, lng, query) {
       client_id: fourSquareClientId,
       client_secret: fourSquareClientSecret,
       v: currentDate, // YYYYMMDD format
-      query: query,
+      categoryId: fourSquareVenueCategories.map( a => a.categoryId ).join(','),  // filter venue by categories 
+      query: query
     },
   });
 
