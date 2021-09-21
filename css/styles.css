@@ -82,6 +82,11 @@ p {
   display: none;
 }
 
+.fa-walking {
+  color: green;
+  font-size: 25px;
+}
+
 /* ..........................style for index.html.................................... */
 
 /* for iPad */

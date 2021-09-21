@@ -46,7 +46,7 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
         radius: 1000,
       });
       circle.addTo(circleGroupLayer);
-      circle.bindPopup(`<h6>within 1km from ${location.name}</h6>`)
+      circle.bindPopup(`<i class="fas fa-walking"></i><h6>within 1km from ${location.name}</h6>`)
     });
     
   }
@@ -67,7 +67,7 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
       radius: 1000,
     });
     circle.addTo(circleGroupLayer);
-    circle.bindPopup(`<h6>within 1km from ${locationData[0].name}</h6>`)
+    circle.bindPopup(`<i class="fas fa-walking"></i><h6>within 1km from ${locationData[0].name}</h6>`)
   }
 
 }
