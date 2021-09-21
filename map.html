@@ -77,11 +77,34 @@
     </main>
 
     <section>
-      <div id="weather-forecast"></div>
+      <!-- Weather Forecast -->
+      <div id="weather-container" class="container px-4">
+        <div class="row gx-5">
+          <div class="col-4 align-self-start">
+           <div class="p-3 border bg-light">
+             <h5>Weather <i class="fas fa-cloud-sun weather-icon"></i></h5>
+             <div>
+              <button id="forecast-2hr" class="btn btn-outline-success btn-custom" type="button">2-hour Forecast</button>
+             </div>
+             <div>
+              <button class="btn btn-outline-success btn-custom" type="button">24-hour Forecast</button>
+             </div>
+             <div>
+              <button class="btn btn-outline-success btn-custom" type="button">4 Days Forecast</button>
+             </div>
+           </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-light">Custom column padding</div>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- third-party -->
     <script src="script/bootstrap.bundle.min.js"></script> <!-- Bootstrap js Bundle with Popper -->
     <script src="third-party/leaflet/leaflet.js"></script>  <!-- Leaflet js -->
+    <script src="third-party/moment.js"></script>  <!-- library for time conversion (YYYY-MM-DD[T]HH:mm:ss) -->
     <script src="script/axios.min.js"></script> <!-- axios -->
     <!-- Custom script -->
     <script src="data/constants.js"></script>
@@ -89,6 +112,7 @@
     <script src="data/main.map.js"></script> <!-- map: Leaflet -->
     <script src="data/location-data-extraction.js"></script> <!-- Four Square Places Location and National Park -->
     <script src="data/locations-mapping.js"></script>
+    <script src="data/weather-forecast.js"></script>
     <script src="script/script.js"></script>
   </body>
 </html>

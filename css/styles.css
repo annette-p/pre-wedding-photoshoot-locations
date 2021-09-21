@@ -104,6 +104,21 @@ p {
   color: red;
 }
 
+#weather-container {
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+.weather-icon {
+  color: lightskyblue
+}
+
+.btn-custom {
+  background-color: rgb(245, 245, 159);
+  font-size: 18px;
+  margin-top: 15px;
+}
+
 /* ..........................style for index.html.................................... */
 
 /* for iPad */
