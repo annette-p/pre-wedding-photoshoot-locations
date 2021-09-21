@@ -88,7 +88,7 @@ window.addEventListener("DOMContentLoaded", async function () {
         addLocationsToMap(parkData, parkSearchMapLayer, map);  // plot marker onto the map 
         locationData = locationData.concat(parkData);  // combine 2 arrays data
 
-        hrLine.style.display = "block";  // to display hr line when search result display  **********
+        hrLine.style.display = "block";  // display hr line when search result display
      
       } );
     }
@@ -101,8 +101,9 @@ window.addEventListener("DOMContentLoaded", async function () {
       let cityData = await searchLocations(center.lat, center.lng, query);
       
       addLocationsToMap(cityData, citySearchMapLayer, map);  // plot marker onto the map  
-
       locationData = locationData.concat(cityData);
+
+      hrLine.style.display = "block";  // display hr line when search result display
     }
 
     /* ................................display result of search locations....................................*/
