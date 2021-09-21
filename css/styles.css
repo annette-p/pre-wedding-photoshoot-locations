@@ -82,9 +82,26 @@ p {
   display: none;
 }
 
-.fa-walking {
+.fa-walking,
+.fa-leaf {
   color: green;
   font-size: 25px;
+}
+
+.marker-icon {
+  font-size: 25px;
+}
+
+.fa-canadian-maple-leaf {
+  color: rgb(179, 7, 7)
+}
+
+.fa-building {
+  color: blue;
+}
+
+.fa-torii-gate {
+  color: red;
 }
 
 /* ..........................style for index.html.................................... */

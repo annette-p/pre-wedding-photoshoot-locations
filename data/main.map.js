@@ -19,3 +19,28 @@ function mainMap() {
   ).addTo(map);
   return map;
 }
+
+
+const natureIcon = L.divIcon({
+  html: '<i class="fab fa-canadian-maple-leaf marker-icon"></i>',
+  iconSize: [20, 20],
+  className: 'nature-icon'
+});
+
+const indoorIcon = L.divIcon({
+  html: '<i class="fas fa-building marker-icon"></i>',
+  iconSize: [20, 20],
+  className: 'indoor-icon'
+});
+
+const outdoorFamousIcon = L.divIcon({
+  html: '<i class="fas fa-leaf marker-icon"></i>',
+  iconSize: [20, 20],
+  className: 'outdoor-famous-icon'
+});
+
+const indoorFamousIcon = L.divIcon({
+  html: '<i class="fas fa-torii-gate marker-icon"></i>',
+  iconSize: [20, 20],
+  className: 'indoor-famous-icon'
+});

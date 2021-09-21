@@ -1,5 +1,5 @@
 // function to plot marker to the map (locationData is an array of objects from Location class)
-function addLocationsToMap(locationData, mapLayer, map) {
+function addLocationsToMap(locationData, mapLayer, markerIcon, map) {
   mapLayer.clearLayers();
   for (let location of locationData) {
 
@@ -11,7 +11,7 @@ function addLocationsToMap(locationData, mapLayer, map) {
     } else {
       popupContent = `<div><h5>${location.name}</h5><img src="${location.image}" style="width:50%"/></div>`;
     }
-    let plotMarker = L.marker(location.coordinates, {"title": location.name}).bindPopup(popupContent);
+    let plotMarker = L.marker(location.coordinates, {"title": location.name, "icon": markerIcon}).bindPopup(popupContent);
     mapLayer.addLayer(plotMarker);
 
     // store reference to marker in Location object

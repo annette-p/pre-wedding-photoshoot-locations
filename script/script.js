@@ -51,14 +51,14 @@ window.addEventListener("DOMContentLoaded", async function () {
   let indoorFamousSpotsLayer = L.layerGroup();
   await searchAttractions("indoor")
   .then( (attractionData) => {
-    addLocationsToMap(attractionData, indoorFamousSpotsLayer, map);
+    addLocationsToMap(attractionData, indoorFamousSpotsLayer, indoorFamousIcon, map);
   } );
 
   /* display famous outdoor spots */
   let outdoorFamousSpotsLayer = L.layerGroup();
   await searchAttractions("outdoor")
   .then( (attractionData) => {
-    addLocationsToMap(attractionData, outdoorFamousSpotsLayer, map);
+    addLocationsToMap(attractionData, outdoorFamousSpotsLayer, outdoorFamousIcon, map);
   } );
 
   /* ...................................Event Listener for Navbar...........................................*/
@@ -85,7 +85,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       await searchNParks(query)
       // parkData is new variable / aka let parkData = await searchNParks(query)
       .then( (parkData) => {
-        addLocationsToMap(parkData, parkSearchMapLayer, map);  // plot marker onto the map 
+        addLocationsToMap(parkData, parkSearchMapLayer, natureIcon, map);  // plot marker onto the map 
         locationData = locationData.concat(parkData);  // combine 2 arrays data
 
         hrLine.style.display = "block";  // display hr line when search result display
@@ -100,7 +100,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       let center = map.getBounds().getCenter();
       let cityData = await searchLocations(center.lat, center.lng, query);
       
-      addLocationsToMap(cityData, citySearchMapLayer, map);  // plot marker onto the map  
+      addLocationsToMap(cityData, citySearchMapLayer, indoorIcon, map);  // plot marker onto the map  
       locationData = locationData.concat(cityData);
 
       hrLine.style.display = "block";  // display hr line when search result display
