@@ -78,6 +78,10 @@ p {
   border: 1px solid black;
 }
 
+.hr-line {
+  display: none;
+}
+
 /* ..........................style for index.html.................................... */
 
 /* for iPad */

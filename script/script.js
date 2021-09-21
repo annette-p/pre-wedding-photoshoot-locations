@@ -18,12 +18,12 @@ window.addEventListener("DOMContentLoaded", async function () {
         hide.innerHTML = "Show";
       }
   });
-
-  // to display the Toggle search & recommendation when click on explore tab
+  
   let exploreTab = document.querySelector("#explore-tab")
   let toggleTab = document.querySelector("#toggle-view-recom")
   let searchForm = document.querySelector("#toggle-search-form")
 
+  // to display the Toggle search & recommendation when click on explore tab
   exploreTab.addEventListener ("click", function () {
     toggleTab.style.display = "block";
     searchForm.style.display = "none";
@@ -71,6 +71,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     circleGroupLayer.clearLayers();
 
     let query = document.querySelector("#search-input").value;
+    let hrLine = document.querySelector(".hr-line");
 
     // to determine which explore options has been selected
     let exploreOption = document.querySelector("input[name='explore']:checked").value;
@@ -86,19 +87,18 @@ window.addEventListener("DOMContentLoaded", async function () {
       .then( (parkData) => {
         addLocationsToMap(parkData, parkSearchMapLayer, map);  // plot marker onto the map 
         locationData = locationData.concat(parkData);  // combine 2 arrays data
+
+        hrLine.style.display = "block";  // to display hr line when search result display  **********
+     
       } );
     }
 
     /* ...................................Places Location...............................................*/
 
     if (exploreOption === "indoor" || exploreOption === "both") {
-      /* 
-      Leaflet Method (for LatLngBounds objects):
-      getBounds() returns LatLngBounds  // getCenter() returns LatLng
-      */
+      /* Leaflet Method (for LatLngBounds objects): getBounds() returns LatLngBounds  // getCenter() returns LatLng */
       let center = map.getBounds().getCenter();
       let cityData = await searchLocations(center.lat, center.lng, query);
-
       
       addLocationsToMap(cityData, citySearchMapLayer, map);  // plot marker onto the map  
 
