@@ -154,11 +154,16 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   /* ....................................Weather Forecast ................................................*/
 
+  // layers for weather forecast
+  let display2hrWeatherLayer = new L.layerGroup();
+
   /* 2-hours Weather Forecast */ 
   let forecast2Hr = document.querySelector("#forecast-2hr");
 
   forecast2Hr.addEventListener ("click", async function () {
-      await get2hrWeather(map);
+    display2hrWeatherLayer.clearLayers();
+    await get2hrWeather(display2hrWeatherLayer);
+    map.addLayer(display2hrWeatherLayer);
   });
 
   /* 24-hours Weather Forecast */ 
@@ -166,6 +171,7 @@ window.addEventListener("DOMContentLoaded", async function () {
   let forecastDisplayResult = document.querySelector("#weather-display");
 
   forecast24Hr.addEventListener ("click", async function () {
+    display2hrWeatherLayer.clearLayers();
     await get24hrWeather(forecastDisplayResult);
   });
 

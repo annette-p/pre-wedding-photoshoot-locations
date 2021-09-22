@@ -2,7 +2,7 @@ const weather2hrAPI = "https://api.data.gov.sg/v1/environment/2-hour-weather-for
 
 /* use moment.js library to convert date & time to ('YYYY-MM-DDTHH:MM:SS')  // https://momentjs.com/ */
 
-async function get2hrWeather(map){
+async function get2hrWeather(display2hrWeatherLayer){
 
     let date_time = moment().format()  // convert to YYYY-MM-DDTHH:MM:SS
     let date = moment().format('YYYY-MM-DD')  // convert to YYYY-MM-DD
@@ -13,7 +13,6 @@ async function get2hrWeather(map){
     await axios.get(weather2hrAPI, {params}).then(function (response) {
 
         let display2hrWeather = response.data;
-        let display2hrWeatherLayer = new L.layerGroup()
 
         for (let i=0; i< display2hrWeather.area_metadata.length; i++){
 
@@ -70,12 +69,10 @@ async function get2hrWeather(map){
             display2hrWeatherLayer.addLayer(weatherMarker)
             // **** to fly to cordinate when click on marker ***
             weatherMarker.on("click", function(e){
-                map.flyTo(this.getLatLng(),16)
+                map.flyTo(this.getLatLng(),16);
             }) 
             
-        }    
-        map.addLayer(display2hrWeatherLayer)
-        // resetMapView()            
+        }          
     })
 }
 
@@ -156,7 +153,7 @@ async function get24hrWeather(forecastDisplayResult) {
                 <p class="weather-text">${forecast}</p>
                 ${weatherIcon} 
 
-                <p class="weather-text"><i class="fas fa-temperature-low"></i> &nbsp;${lowTemp} / <i class="fas fa-temperature-high"></i> &nbsp;${highTemp}</p>
+                <p class="weather-text"><i class="fas fa-temperature-low"></i> &nbsp;${lowTemp} &deg;C / <i class="fas fa-temperature-high"></i> &nbsp;${highTemp} &deg;C</p>
             `
             forecastDisplayResult.innerHTML = weatherText;
 
