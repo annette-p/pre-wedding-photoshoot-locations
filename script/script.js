@@ -145,5 +145,13 @@ window.addEventListener("DOMContentLoaded", async function () {
   });
 
   /* 24-hours Weather Forecast */ 
+  let forecast24Hr = document.querySelector("#forecast-2hr");
+  let forecastDisplayResult = document.querySelector("#weather-display");
+
+  forecast24Hr.addEventListener ("click", async function () {
+    // await get24hrWeather(map)
+    await get24hrWeather()
+    forecastDisplayResult.innerHTML = get24hrWeather
+});
     
 });
