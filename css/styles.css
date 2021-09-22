@@ -119,6 +119,11 @@ p {
   margin-top: 15px;
 }
 
+.weather-marker-icon {
+  font-size: 25px;
+  color: rgb(67, 67, 238)
+}
+
 /* ..........................style for index.html.................................... */
 
 /* for iPad */

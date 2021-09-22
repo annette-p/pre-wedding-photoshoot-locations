@@ -1,14 +1,11 @@
 const weather2hrAPI = "https://api.data.gov.sg/v1/environment/2-hour-weather-forecast"
 
-/*
-use moment.js library to convert date & time to ('YYYY-MM-DDTHH:MM:SS')  // https://momentjs.com/
-*/
+/* use moment.js library to convert date & time to ('YYYY-MM-DDTHH:MM:SS')  // https://momentjs.com/ */
 
 async function get2hrWeather(map){
 
     let date_time = moment().format()  // convert to YYYY-MM-DDTHH:MM:SS
     let date = moment().format('YYYY-MM-DD')  // convert to YYYY-MM-DD
-
     params = {date_time, date}
 
     // clearOptionalLayers();
@@ -23,7 +20,7 @@ async function get2hrWeather(map){
             area = display2hrWeather.area_metadata[i]
             let forecast = display2hrWeather.items[0].forecasts[i].forecast
             let weatherCoordinate = [area.label_location.latitude, area.label_location.longitude]
-            console.log(area.name, weatherCoordinate, forecast)
+            // console.log(area.name, weatherCoordinate, forecast)
             
             let weatherMarker = undefined
             switch (forecast){
@@ -73,12 +70,8 @@ async function get2hrWeather(map){
             weatherMarker.on("click", function(e){
                 map.flyTo(this.getLatLng(),14)
             }) 
-            // marker.click(function(){
-            //     map.flyTo(this.getLatLng(),14)
-            // })
             
         }    
-        // display2hrWeatherLayer.addTo(map)
         map.addLayer(display2hrWeatherLayer)
         // resetMapView()            
     })

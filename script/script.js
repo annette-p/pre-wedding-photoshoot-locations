@@ -93,7 +93,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       } );
     }
 
-    /* ...................................Places Location...............................................*/
+    /* .....................................Places Location.............................................*/
 
     if (exploreOption === "indoor" || exploreOption === "both") {
       /* Leaflet Method (for LatLngBounds objects): getBounds() returns LatLngBounds  // getCenter() returns LatLng */
@@ -117,7 +117,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     document.querySelector("#search-input").value = "";
   });
 
-  /* ............................Event Listener for View Recommendation ...................................*/
+  /* ...................................View Recommendation ...............................................*/
   document.querySelector("input[name=recommend-outdoor]").addEventListener("change", function (event) {
     if (this.checked) {
       map.addLayer(outdoorFamousSpotsLayer)
@@ -134,11 +134,16 @@ window.addEventListener("DOMContentLoaded", async function () {
     }
   });
 
-  
+
+  /* ....................................Weather Forecast ................................................*/
+
+  /* 2-hours Weather Forecast */ 
   let forecast2Hr = document.querySelector("#forecast-2hr");
 
   forecast2Hr.addEventListener ("click", async function () {
       await get2hrWeather(map)
   });
+
+  /* 24-hours Weather Forecast */ 
     
 });
