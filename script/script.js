@@ -52,14 +52,22 @@ window.addEventListener("DOMContentLoaded", async function () {
   await searchAttractions("indoor")
   .then( (attractionData) => {
     addLocationsToMap(attractionData, indoorFamousSpotsLayer, indoorFamousIcon, map);
-  } );
+  });
 
   /* display famous outdoor spots */
   let outdoorFamousSpotsLayer = L.layerGroup();
   await searchAttractions("outdoor")
   .then( (attractionData) => {
     addLocationsToMap(attractionData, outdoorFamousSpotsLayer, outdoorFamousIcon, map);
-  } );
+  });
+
+
+  /* display regions */
+  let regionsLayer = L.layerGroup();
+  await searchSgRegions()
+  .then( (regionData) => {
+    displayRegions(regionData, regionsLayer);
+  });
 
   /* ...................................Event Listener for Navbar...........................................*/
   document.querySelector("#search-btn").addEventListener("click", async function (event) {
@@ -134,6 +142,15 @@ window.addEventListener("DOMContentLoaded", async function () {
     }
   });
 
+  /* ....................................Show Regions ................................................*/
+  document.querySelector("input[name=show-region]").addEventListener("change", function (event) {
+    if (this.checked) {
+      map.addLayer(regionsLayer);
+    } else {
+      map.removeLayer(regionsLayer);
+    }
+  });
+
 
   /* ....................................Weather Forecast ................................................*/
 
@@ -150,6 +167,6 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   forecast24Hr.addEventListener ("click", async function () {
     await get24hrWeather(forecastDisplayResult);
-});
-    
+  });
+
 });

@@ -70,3 +70,31 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
   }
 
 }
+
+/* ........................................ SG Regions ................................................*/
+
+function displayRegions(regionData, mapLayer) {
+  for (let region of regionData) {
+    // extract region name
+    let regionName = getRegionNameFromDescription(region.properties.Description)
+    let regionColor = "";
+    switch (regionName) {
+      case 'WEST REGION': regionColor = "blue"; break;
+      case 'NORTH REGION': regionColor = "green"; break;
+      case 'NORTH-EAST REGION': regionColor = "red"; break;
+      case 'EAST REGION': regionColor = "yellow"; break;
+      case 'CENTRAL REGION': regionColor = "orange"; break;
+      default: regionColor = ""; break;
+    }
+
+    // create a multi-polygon layer using geojson data, with background color
+    let polygon = L.geoJSON(region.geometry, { style: {color: regionColor} });
+
+    // get center coordinate of multi-polygon layer - on Leaflet
+    let center = polygon.getBounds().getCenter()
+    // create Leaflet marker at the center coordinatr, with tooltip showing region name  // permanent: true >> is to always display
+    let marker = L.marker(center).bindTooltip(regionName, {permanent: true, direction:"center", className: 'polygon-labels'});
+    mapLayer.addLayer(marker)
+    mapLayer.addLayer(polygon)
+  }
+}

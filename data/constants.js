@@ -1,5 +1,7 @@
 const nparkAPI = "data/n-parks.geojson";
 
+const sgRegionAPI = "data/sg-regions.geojson";
+
 const attractionsAPI = "data/attraction-spots.json";
 
 const fourSquareBaseAPI = "https://api.foursquare.com/v2/";

@@ -120,4 +120,24 @@ async function searchAttractions(locationType) {
   return sortLocationsByName(filteredAttractions);
 }
 
+/* ........................................ SG Regions ................................................*/
+
+/* Extract park's "Name" from park's description */
+function getRegionNameFromDescription(regionDescription) {
+  let divElement = document.createElement("div");
+  // setting innerHTML from the description
+  divElement.innerHTML = regionDescription;
+  // select td from n-park's table data
+  let cells = divElement.querySelectorAll("td");
+  // 7th elements of td represent the park's name
+  let name = cells[0].innerHTML;
+
+  return name;
+}
+
+async function searchSgRegions() {
+  let response = await axios.get(sgRegionAPI)
+  return response.data.features;
+}
+
 /* ..............................................................................................*/
