@@ -1,27 +1,29 @@
 window.addEventListener("DOMContentLoaded", async function () {
   // calling leaflet map function
   let map = mainMap()
-  
-  let hide = document.querySelector("#hide")
-  let searchContainer = document.querySelector("#body-box")
 
-    // to hide the card box body
-    hide.addEventListener ("click", function () {
-      if (!searchContainer.style.display) {
-        searchContainer.style.display = "none";
-        hide.innerHTML = "Show";
-      } else if (searchContainer.style.display == "none") {
-        searchContainer.style.display = "block";
-        hide.innerHTML = "Hide";
-      } else {
-        searchContainer.style.display = "none";
-        hide.innerHTML = "Show";
-      }
+  /* ............................................Navbar....................................................*/
+  
+  let hide = document.querySelector("#hide");
+  let searchContainer = document.querySelector("#body-box");
+
+  // to hide the card box body
+  hide.addEventListener ("click", function () {
+    if (!searchContainer.style.display) {
+      searchContainer.style.display = "none";
+      hide.innerHTML = "Show";
+    } else if (searchContainer.style.display == "none") {
+      searchContainer.style.display = "block";
+      hide.innerHTML = "Hide";
+    } else {
+      searchContainer.style.display = "none";
+      hide.innerHTML = "Show";
+    }
   });
   
-  let exploreTab = document.querySelector("#explore-tab")
-  let toggleTab = document.querySelector("#toggle-view-recom")
-  let searchForm = document.querySelector("#toggle-search-form")
+  let exploreTab = document.querySelector("#explore-tab");
+  let toggleTab = document.querySelector("#toggle-view-recom");
+  let searchForm = document.querySelector("#toggle-search-form");
 
   // to display the Toggle search & recommendation when click on explore tab
   exploreTab.addEventListener ("click", function () {
@@ -43,33 +45,10 @@ window.addEventListener("DOMContentLoaded", async function () {
   // for radius circle overlay layer
   let circleGroupLayer = L.layerGroup();
 
-  map.addLayer(circleGroupLayer)
-  map.addLayer(citySearchMapLayer)
-  map.addLayer(parkSearchMapLayer)
+  map.addLayer(circleGroupLayer);
+  map.addLayer(citySearchMapLayer);
+  map.addLayer(parkSearchMapLayer);
 
-  /* display famous indoor spots */
-  let indoorFamousSpotsLayer = L.layerGroup();
-  await searchAttractions("indoor")
-  .then( (attractionData) => {
-    addLocationsToMap(attractionData, indoorFamousSpotsLayer, indoorFamousIcon, map);
-  });
-
-  /* display famous outdoor spots */
-  let outdoorFamousSpotsLayer = L.layerGroup();
-  await searchAttractions("outdoor")
-  .then( (attractionData) => {
-    addLocationsToMap(attractionData, outdoorFamousSpotsLayer, outdoorFamousIcon, map);
-  });
-
-
-  /* display regions */
-  let regionsLayer = L.layerGroup();
-  await searchSgRegions()
-  .then( (regionData) => {
-    displayRegions(regionData, regionsLayer);
-  });
-
-  /* ...................................Event Listener for Navbar...........................................*/
   document.querySelector("#search-btn").addEventListener("click", async function (event) {
     event.preventDefault();
 
@@ -98,7 +77,7 @@ window.addEventListener("DOMContentLoaded", async function () {
 
         hrLine.style.display = "block";  // display hr line when search result display
      
-      } );
+      });
     }
 
     /* .....................................Places Location.............................................*/
@@ -119,30 +98,53 @@ window.addEventListener("DOMContentLoaded", async function () {
     // Display list of locations (can be outdoor + indoor)
     locationData = sortLocationsByName(locationData); // sorted both again by name alphabetically 
     let searchResultLayer = document.querySelector("#search-result-display");
-    addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searchResultLayer, map)
+    addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searchResultLayer, map);
 
     // clear the search input
     document.querySelector("#search-input").value = "";
   });
 
   /* ...................................View Recommendation ...............................................*/
+
+  /* display famous outdoor spots */
+  let outdoorFamousSpotsLayer = L.layerGroup();
+  await searchAttractions("outdoor")
+  .then( (attractionData) => {
+    addLocationsToMap(attractionData, outdoorFamousSpotsLayer, outdoorFamousIcon, map);
+  });
+
   document.querySelector("input[name=recommend-outdoor]").addEventListener("change", function (event) {
     if (this.checked) {
-      map.addLayer(outdoorFamousSpotsLayer)
+      map.addLayer(outdoorFamousSpotsLayer);
     } else {
-      map.removeLayer(outdoorFamousSpotsLayer)
+      map.removeLayer(outdoorFamousSpotsLayer);
     }
+  });
+
+  /* display famous indoor spots */
+  let indoorFamousSpotsLayer = L.layerGroup();
+  await searchAttractions("indoor")
+  .then( (attractionData) => {
+    addLocationsToMap(attractionData, indoorFamousSpotsLayer, indoorFamousIcon, map);
   });
 
   document.querySelector("input[name=recommend-indoor]").addEventListener("change", function (event) {
     if (this.checked) {
-      map.addLayer(indoorFamousSpotsLayer)
+      map.addLayer(indoorFamousSpotsLayer);
     } else {
-      map.removeLayer(indoorFamousSpotsLayer)
+      map.removeLayer(indoorFamousSpotsLayer);
     }
   });
 
   /* ....................................Show Regions ................................................*/
+
+  /* display regions */
+  let regionsLayer = L.layerGroup();
+  await searchSgRegions()
+  .then( (regionData) => {
+    displayRegions(regionData, regionsLayer);
+  });
+
   document.querySelector("input[name=show-region]").addEventListener("change", function (event) {
     if (this.checked) {
       map.addLayer(regionsLayer);
@@ -150,7 +152,6 @@ window.addEventListener("DOMContentLoaded", async function () {
       map.removeLayer(regionsLayer);
     }
   });
-
 
   /* ....................................Weather Forecast ................................................*/
 
@@ -162,7 +163,7 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   forecast2Hr.addEventListener ("click", async function () {
     display2hrWeatherLayer.clearLayers();
-    await get2hrWeather(display2hrWeatherLayer);
+    await get2hrWeather(display2hrWeatherLayer, map);
     map.addLayer(display2hrWeatherLayer);
   });
 

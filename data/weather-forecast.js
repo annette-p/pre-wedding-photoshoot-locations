@@ -2,7 +2,7 @@ const weather2hrAPI = "https://api.data.gov.sg/v1/environment/2-hour-weather-for
 
 /* use moment.js library to convert date & time to ('YYYY-MM-DDTHH:MM:SS')  // https://momentjs.com/ */
 
-async function get2hrWeather(display2hrWeatherLayer){
+async function get2hrWeather(display2hrWeatherLayer, map){
 
     let date_time = moment().format()  // convert to YYYY-MM-DDTHH:MM:SS
     let date = moment().format('YYYY-MM-DD')  // convert to YYYY-MM-DD
