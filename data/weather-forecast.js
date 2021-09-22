@@ -12,56 +12,58 @@ async function get2hrWeather(map){
 
     await axios.get(weather2hrAPI, {params}).then(function (response) {
 
-        let display2hrWeather = response.data
+        let display2hrWeather = response.data;
         let display2hrWeatherLayer = new L.layerGroup()
 
         for (let i=0; i< display2hrWeather.area_metadata.length; i++){
 
-            area = display2hrWeather.area_metadata[i]
-            let forecast = display2hrWeather.items[0].forecasts[i].forecast
-            let weatherCoordinate = [area.label_location.latitude, area.label_location.longitude]
+            area = display2hrWeather.area_metadata[i];
+            let forecast = display2hrWeather.items[0].forecasts[i].forecast;
+            let weatherCoordinate = [area.label_location.latitude, area.label_location.longitude];
+            let popupMsg = `<b>${forecast}</b><br>${area.name}`;
             // console.log(area.name, weatherCoordinate, forecast)
             
-            let weatherMarker = undefined
+            let weatherMarker = undefined;
             switch (forecast){
                 case "Cloudy":
-                    weatherMarker = L.marker(weatherCoordinate, {icon: cloudyIcon}).bindPopup(forecast + '<br>' + area.name)
+                    weatherMarker = L.marker(weatherCoordinate, {icon: cloudyIcon}).bindPopup(popupMsg)
+                    // bindPopup(forecast + '<br>' + area.name)
                 break;
 
                 case "Fair & Warm":
                 case "Fair (Day)":
-                    weatherMarker = L.marker(weatherCoordinate, {icon: fairDayIcon}).bindPopup(forecast + '<br>' + area.name)
+                    weatherMarker = L.marker(weatherCoordinate, {icon: fairDayIcon}).bindPopup(popupMsg)
                 break;
 
                 case "Partly Cloudy (Day)":
-                    weatherMarker = L.marker(weatherCoordinate, {icon: partlyCloudyDayIcon}).bindPopup(forecast + '<br>' + area.name)
+                    weatherMarker = L.marker(weatherCoordinate, {icon: partlyCloudyDayIcon}).bindPopup(popupMsg)
                 break;
 
                 case "Partly Cloudy (Night)":
-                    weatherMarker = L.marker(weatherCoordinate, {icon: partlyCloudyNightIcon}).bindPopup(forecast + '<br>' + area.name)
+                    weatherMarker = L.marker(weatherCoordinate, {icon: partlyCloudyNightIcon}).bindPopup(popupMsg)
                 break;
 
                 case "Fair (Night)":
-                    weatherMarker = L.marker(weatherCoordinate, {icon: fairNightIcon}).bindPopup(forecast + '<br>' + area.name)
+                    weatherMarker = L.marker(weatherCoordinate, {icon: fairNightIcon}).bindPopup(popupMsg)
                 break;
 
                 case "Light Showers":
                 case "Light Rain":
                 case "Moderate Rain":
-                    weatherMarker = L.marker(weatherCoordinate, {icon: lightToModerateRainIcon}).bindPopup(forecast + '<br>' + area.name)
+                    weatherMarker = L.marker(weatherCoordinate, {icon: lightToModerateRainIcon}).bindPopup(popupMsg)
                 break;
 
                 case "Showers":
-                    weatherMarker = L.marker(weatherCoordinate, {icon: showersIcon}).bindPopup(forecast + '<br>' + area.name)
+                    weatherMarker = L.marker(weatherCoordinate, {icon: showersIcon}).bindPopup(popupMsg)
                 break;
                 
                 case "Thundery Showers":
                 case "Heavy Thundery Showers":    
-                    weatherMarker = L.marker(weatherCoordinate, {icon: heavyThunderyShowersIcon}).bindPopup(forecast + '<br>' + area.name)
+                    weatherMarker = L.marker(weatherCoordinate, {icon: heavyThunderyShowersIcon}).bindPopup(popupMsg)
                 break;
 
                 default:
-                    weatherMarker = L.marker(weatherCoordinate, {icon: cloudyIcon}).bindPopup(forecast + '<br>' + area.name)
+                    weatherMarker = L.marker(weatherCoordinate, {icon: cloudyIcon}).bindPopup(popupMsg)
                 break;
             } 
 
