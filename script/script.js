@@ -135,5 +135,10 @@ window.addEventListener("DOMContentLoaded", async function () {
   });
 
   
-  
+  let forecast2Hr = document.querySelector("#forecast-2hr");
+
+  forecast2Hr.addEventListener ("click", async function () {
+      await get2hrWeather(map)
+  });
+    
 });

@@ -20,7 +20,7 @@ function mainMap() {
   return map;
 }
 
-
+// Location icons
 const natureIcon = L.divIcon({
   html: '<i class="fab fa-canadian-maple-leaf marker-icon"></i>',
   iconSize: [20, 20],
@@ -43,4 +43,54 @@ const indoorFamousIcon = L.divIcon({
   html: '<i class="fas fa-torii-gate marker-icon"></i>',
   iconSize: [20, 20],
   className: 'indoor-famous-icon'
+});
+
+
+// Weather icons
+const cloudyIcon = L.divIcon({
+  html: '<i class="fas fa-cloud"></i>',
+  iconSize: [20, 20],
+  className: 'cloudy-icon'
+});
+
+const fairDayIcon = L.divIcon({
+  html: '<i class="far fa-sun"></i>',
+  iconSize: [20, 20],
+  className: 'fair-day-icon'
+});
+
+const partlyCloudyDayIcon = L.divIcon({
+  html: '<i class="fas fa-cloud-sun"></i>',
+  iconSize: [20, 20],
+  className: 'partly-cloudy-day-icon'
+});
+
+const partlyCloudyNightIcon = L.divIcon({
+  html: '<i class="fas fa-cloud-moon"><i>',
+  iconSize: [20, 20],
+  className: 'partly-cloudy-night-icon'
+});
+
+const fairNightIcon = L.divIcon({
+  html: '<i class="fas fa-moon"></i>',
+  iconSize: [20, 20],
+  className: 'fair-night-icon'
+});
+
+const lightToModerateRainIcon = L.divIcon({
+  html: '<i class="fas fa-cloud-sun-rain"></i>',
+  iconSize: [20, 20],
+  className: 'light-moderate-rain-icon'
+});
+
+const showersIcon = L.divIcon({
+  html: '<i class="fas fa-cloud-showers-heavy"></i>',
+  iconSize: [20, 20],
+  className: 'showers-icon'
+});
+
+const heavyThunderyShowersIcon = L.divIcon({
+  html: '<i class="fas fa-poo-storm"></i>',
+  iconSize: [20, 20],
+  className: 'heavy-thundery-showers-icon'
 });
