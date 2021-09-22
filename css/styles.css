@@ -100,7 +100,8 @@ p {
   color: rgb(77, 75, 75);
 }
 
-.fa-torii-gate {
+.fa-torii-gate,
+.fa-temperature-high {
   color: red;
 }
 
@@ -110,7 +111,8 @@ p {
 }
 
 .weather-icon,
-.cloudy-icon {
+.cloudy-icon,
+.fa-cloud {
   color: rgb(55, 172, 245)
 }
 
@@ -124,15 +126,18 @@ p {
   font-size: 25px;
 }
 
-.fair-day-icon {
+.fair-day-icon,
+.fa-sun {
   color: rgb(236, 90, 5);
 }
 
-.partly-cloudy-day-icon {
+.partly-cloudy-day-icon,
+.fa-cloud-sun {
   color: rgb(67, 67, 238);
 }
 
-.partly-cloudy-night-icon {
+.partly-cloudy-night-icon,
+.fa-cloud-moon {
   color: rgb(139, 108, 4);
 }
 
@@ -140,17 +145,30 @@ p {
   color: rgb(243, 243, 43);
 }
 
-.light-moderate-rain-icon {
+.light-moderate-rain-icon,
+.fa-cloud-sun-rain {
   color: rgb(160, 160, 212);
 }
 
-.showers-icon {
+.showers-icon,
+.fa-cloud-showers-heavy {
   color: rgb(3, 3, 170);
 }
 
-.heavy-thundery-showers-icon {
+.heavy-thundery-showers-icon,
+.fa-poo-storm {
   color: rgb(1, 1, 71);
 }
+
+.fa-temperature-low {
+  color: green;
+}
+
+.weather-text {
+  color: rgb(105, 102, 102);
+  font-size: large;
+}
+
 
 /* ..........................style for index.html.................................... */
 

@@ -141,17 +141,15 @@ window.addEventListener("DOMContentLoaded", async function () {
   let forecast2Hr = document.querySelector("#forecast-2hr");
 
   forecast2Hr.addEventListener ("click", async function () {
-      await get2hrWeather(map)
+      await get2hrWeather(map);
   });
 
   /* 24-hours Weather Forecast */ 
-  let forecast24Hr = document.querySelector("#forecast-2hr");
+  let forecast24Hr = document.querySelector("#forecast-24hr");
   let forecastDisplayResult = document.querySelector("#weather-display");
 
   forecast24Hr.addEventListener ("click", async function () {
-    // await get24hrWeather(map)
-    await get24hrWeather()
-    forecastDisplayResult.innerHTML = get24hrWeather
+    await get24hrWeather(forecastDisplayResult);
 });
     
 });

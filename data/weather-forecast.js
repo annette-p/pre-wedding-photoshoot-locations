@@ -88,7 +88,7 @@ async function get2hrWeather(map){
 
 const weather24hrAPI = "https://api.data.gov.sg/v1/environment/24-hour-weather-forecast"
 
-async function get24hrWeather() {
+async function get24hrWeather(forecastDisplayResult) {
     let date_time = moment().format()
     let date = moment().format('YYYY-MM-DD')
 
@@ -101,9 +101,10 @@ async function get24hrWeather() {
         let forecast = display24hrWeather.items[0].general.forecast;
         let lowTemp = display24hrWeather.items[0].general.temperature.low;
         let highTemp = display24hrWeather.items[0].general.temperature.high;
-        let regionCoordinate = display24hrWeather.items[0].periods[i].regions;
-        let timeProjection = display24hrWeather.items[0].periods[i].time;
-        let popupMsg = `<b>${forecast}</b>`;
+        // for adding to map
+        // let regionCoordinate = display24hrWeather.items[0].periods[i].regions;
+        // let timeProjection = display24hrWeather.items[0].periods[i].time;
+        // let popupMsg = `<b>${forecast}</b>`;
 
         let aveTemp = Math.floor((lowTemp + highTemp) / 2)
 
@@ -151,18 +152,13 @@ async function get24hrWeather() {
             } 
 
             let weatherText = `
-                    <h3 class="bluetext mb-0 mt-3">24 Hours Forecast</h3>
-                    
-                        <p class="weatherText mt-0 pt-0 pb-0 mb-0">${forecast} </span></p>
-                        <img src="${weatherIcon}" class="ml-2 pt-2"> 
+                <h3>24 Hours Forecast</h3>
+                <p class="weather-text">${forecast}</p>
+                ${weatherIcon} 
 
-                        <p class="highlow mt-3">
-                            <small class="lightgreen-text"><sup><i class="fas fa-temperature-low"></i></sup> </small>${lowTemp} / <small class="text-danger"><sup><i class="fas fa-temperature-high"></i></sup></small> ${highTemp}
-                        </p>
+                <p class="weather-text"><i class="fas fa-temperature-low"></i> &nbsp;${lowTemp} / <i class="fas fa-temperature-high"></i> &nbsp;${highTemp}</p>
             `
-
-            $('#weather-display').empty()
-            $('#weather-display').append(weatherText)
+            forecastDisplayResult.innerHTML = weatherText;
 
     })
 
