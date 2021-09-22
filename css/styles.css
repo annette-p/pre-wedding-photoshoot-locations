@@ -109,8 +109,9 @@ p {
   padding-bottom: 20px;
 }
 
-.weather-icon {
-  color: lightskyblue
+.weather-icon,
+.cloudy-icon {
+  color: rgb(55, 172, 245)
 }
 
 .btn-custom {
@@ -121,7 +122,34 @@ p {
 
 .weather-marker-icon {
   font-size: 25px;
-  color: rgb(67, 67, 238)
+}
+
+.fair-day-icon {
+  color: rgb(236, 90, 5);
+}
+
+.partly-cloudy-day-icon {
+  color: rgb(67, 67, 238);
+}
+
+.partly-cloudy-night-icon {
+  color: rgb(139, 108, 4);
+}
+
+.fair-night-icon {
+  color: rgb(243, 243, 43);
+}
+
+.light-moderate-rain-icon {
+  color: rgb(160, 160, 212);
+}
+
+.showers-icon {
+  color: rgb(3, 3, 170);
+}
+
+.heavy-thundery-showers-icon {
+  color: rgb(1, 1, 71);
 }
 
 /* ..........................style for index.html.................................... */
