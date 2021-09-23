@@ -59,6 +59,7 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     let query = document.querySelector("#search-input").value;
     let hrLine = document.querySelector(".hr-line");
+    let clearBtn = document.querySelector("#btn-reset");
 
     // to determine which explore options has been selected
     let exploreOption = document.querySelector("input[name='explore']:checked").value;
@@ -76,6 +77,7 @@ window.addEventListener("DOMContentLoaded", async function () {
         locationData = locationData.concat(parkData);  // combine 2 arrays data
 
         hrLine.style.display = "block";  // display hr line when search result display
+        clearBtn.style.display = "block"; 
      
       });
     }
@@ -91,6 +93,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       locationData = locationData.concat(cityData);
 
       hrLine.style.display = "block";  // display hr line when search result display
+      clearBtn.style.display = "block"; 
     }
 
     /* ................................display result of search locations....................................*/
