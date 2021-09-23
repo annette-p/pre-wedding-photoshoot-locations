@@ -118,7 +118,8 @@ p {
 
 .weather-icon,
 .cloudy-icon,
-.fa-cloud {
+.fa-cloud,
+#default-cloud {
   color: rgb(55, 172, 245)
 }
 
