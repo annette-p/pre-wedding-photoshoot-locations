@@ -59,6 +59,7 @@ p {
   position: absolute;
   z-index: 314159;
   background-color: rgba(218, 216, 216, 0.82);
+  /* width: 32%; */
 }
 
 .form-check-label {
@@ -72,17 +73,22 @@ p {
 
 #search-result-display {
   overflow-y: auto;
-  max-height:200px;
+  max-height:150px;
+  /* align-items: center; */
 }
 
 #map {
-  height: 700px;
+  height: 600px;
   border: 1px solid black;
 }
 
-.hr-line,
+.hr-line {
+  display: none;
+}
+
 #btn-reset {
   display: none;
+  align-items: center;
 }
 
 .fa-walking,
@@ -178,6 +184,9 @@ p {
 
 /* for iPad */
 @media (min-width: 768px) {
+  .nav-container {
+    width: 45%;
+  }
   /* #popular-spot {
     display: inline;
   } */
@@ -187,6 +196,10 @@ p {
 
 /* for laptop */
 @media (min-width: 992px) {
+  .nav-container {
+    width: 32%;
+  }
+
   .d-flex {
     width: 500px;
   }
