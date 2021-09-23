@@ -86,6 +86,7 @@ p {
 #search-result-display {
   overflow-y: auto;
   max-height:150px;
+  font-size: small;
   /* align-items: center; */
 }
 
@@ -219,6 +220,10 @@ p {
     /* padding-left: 20px; */
     font-size: large;
   }
+
+  #search-result-display {
+    font-size: large;
+  }
 }
 
 /* .............................................................. */
@@ -248,6 +253,10 @@ p {
   .nav-choices {
     padding-left: 20px;
     padding-right: 35px;
+    font-size: large;
+  }
+
+  #search-result-display {
     font-size: large;
   }
 }
