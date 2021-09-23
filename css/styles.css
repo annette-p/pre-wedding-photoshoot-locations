@@ -1,4 +1,5 @@
-.main-section {
+.main-section,
+.map-container {
   position: relative;
 }
 
@@ -55,7 +56,12 @@ p {
 
 /* ..........................style for map.html.................................... */
 .nav-container {
-  width: 35%;
+  position: absolute;
+  z-index: 314159;
+}
+
+.nav-container {
+  width: 25%;
   background-color: rgba(218, 216, 216, 0.82);
 }
 
@@ -74,7 +80,7 @@ p {
 }
 
 #map {
-  height: 800px;
+  height: 700px;
   border: 1px solid black;
 }
 
