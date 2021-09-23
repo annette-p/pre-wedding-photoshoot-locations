@@ -2,7 +2,9 @@
 
 function mainMap() {
   let singapore = [1.29, 103.85]; // [ <lat>, <lng> ]
-  let map = L.map("map");
+  let map = L.map("map")
+  // let map = L.map("map", {zoomControl: false});
+  //   new L.Control.Zom({position: 'topright'}).addTo (map)
   map.setView(singapore, 12);
 
   L.tileLayer(

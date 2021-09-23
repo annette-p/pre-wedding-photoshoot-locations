@@ -16,12 +16,13 @@
     <title>Map Navigation Page</title>
   </head>
   <body>
-    <main>
+    <main>  
       <div class="map-container">
         <!-- Navigation & Search bar -->
+        <!-- *** to change here  **** -->
         <div class="nav-container">
+          <!-- Navbar tap -->
           <div class="card-header">
-            <!-- Navbar tap -->
             <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
                 <a class="nav-link" id="search" aria-current="true">Search</a>
@@ -33,8 +34,8 @@
                 <a id="hide" class="nav-link" href="#">Hide</a>
               </li>
             </ul>
-            <!-- End of Navbar tap -->
           </div>
+          <!-- End of Navbar tap -->
           <div id="body-box" class="card-body">
             <!-- Search: input box & button -->
             <div id="toggle-search-form">
@@ -83,7 +84,8 @@
         </div>
         <!-- map -->
         <div id="map"></div>
-      </div>
+      </div> 
+      
     </main>
 
     <section>
@@ -110,6 +112,81 @@
         </div>
       </div>
     </section>
+
+    <!-- Navbar for small screen (mobile) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Search</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- Search Drop down -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Search
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div id="toggle-search-form">
+                  <label class="form-check-label"><b>Location Type:</b></label> <br>
+                  <input class="form-check-input" type="radio" name="explore" value="outdoor" checked/>
+                  <label class="form-check-label">Outdoor nature</label>
+                  <input class="form-check-input" type="radio" name="explore" value="indoor"/>
+                  <label class="form-check-label">Indoor</label>
+                  <input class="form-check-input" type="radio" name="explore" value="both"/>
+                  <label class="form-check-label">Both</label>
+                </div>
+              </ul>
+            </li>
+            
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Explore</a>
+            </li> -->
+
+            <!-- Explore Drop down -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Explore
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div>
+                  <h5>View Recommend:</h5>
+                  <input class="form-check-input" type="checkbox" name="recommend-outdoor" value="outdoor-spots"/>
+                  <label class="form-check-label">Outdoor famous spots</label>
+                  <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="recommend-indoor" value="indoor-spots"/>
+                  <label class="form-check-label">Indoor famous spots</label>
+                  </div>
+                  <hr class="mx-3">
+                  <h5>Toggle Search:</h5>
+                  <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="recommend-outdoor" value="outdoor-spots"/>
+                  <label class="form-check-label">Show Hotels</label>
+                  </div>
+                  <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="show-region" value="region"/>
+                  <label class="form-check-label">Show Regions</label>
+                  </div>
+                  <hr class="mx-3">
+                  <div class="px-4 pt-1">
+                  <button id="btn-reset" type="button" class="btn btn-outline-secondary">Clear Result</button>
+                </div>
+
+                <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
 
     <!-- third-party -->
     <script src="script/bootstrap.bundle.min.js"></script> <!-- Bootstrap js Bundle with Popper -->

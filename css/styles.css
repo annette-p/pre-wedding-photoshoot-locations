@@ -58,10 +58,6 @@ p {
 .nav-container {
   position: absolute;
   z-index: 314159;
-}
-
-.nav-container {
-  width: 25%;
   background-color: rgba(218, 216, 216, 0.82);
 }
 
