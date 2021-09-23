@@ -71,6 +71,18 @@ p {
   display: none;
 }
 
+.card-header {
+  font-size: small;
+}
+
+.recom-title-lg {
+  display: none;
+}
+
+.nav-choices {
+  font-size: small;
+}
+
 #search-result-display {
   overflow-y: auto;
   max-height:150px;
@@ -180,27 +192,62 @@ p {
 }
 
 
-/* ..........................style for index.html.................................... */
+/* ..........................style for meduim and large screen.................................... */
 
 /* for iPad */
 @media (min-width: 768px) {
-  .nav-container {
+  /* .nav-container {
     width: 45%;
-  }
+  } */
   /* #popular-spot {
     display: inline;
   } */
+
+  .card-header {
+    font-size: larger;
+  }
+
+  .recom-title-sm {
+    display: none;
+  }
+
+  .recom-title-lg {
+    display: block;
+  }
+
+  .nav-choices {
+    /* padding-left: 20px; */
+    font-size: large;
+  }
 }
 
 /* .............................................................. */
 
 /* for laptop */
 @media (min-width: 992px) {
-  .nav-container {
+  /* .nav-container {
     width: 32%;
-  }
+  } */
 
   .d-flex {
     width: 500px;
+  }
+
+  .card-header {
+    font-size: larger;
+  }
+
+  .recom-title-sm {
+    display: none;
+  }
+
+  .recom-title-lg {
+    display: block;
+  }
+
+  .nav-choices {
+    padding-left: 20px;
+    padding-right: 35px;
+    font-size: large;
   }
 }

@@ -38,21 +38,24 @@
           <div id="body-box" class="card-body">
             <!-- Search: input box & button -->
             <div id="toggle-search-form">
-              <label class="form-check-label"><b>Location Type:</b></label> <br>
-              <input class="form-check-input" type="radio" name="explore" value="outdoor" checked/>
-              <label class="form-check-label">Outdoor nature</label>
-              <input class="form-check-input" type="radio" name="explore" value="indoor"/>
-              <label class="form-check-label">Indoor</label>
-              <input class="form-check-input" type="radio" name="explore" value="both"/>
-              <label class="form-check-label">Both</label>
+              <div class="nav-choices">
+                <label class="form-check-label"><b>Location Type:</b></label> <br>
+                <input class="form-check-input" type="radio" name="explore" value="outdoor" checked/>
+                <label class="form-check-label">Outdoor nature</label>
+                <input class="form-check-input" type="radio" name="explore" value="indoor"/>
+                <label class="form-check-label">Indoor</label>
+                <input class="form-check-input" type="radio" name="explore" value="both"/>
+                <label class="form-check-label">Both</label>
+              </div>
               <form class="d-flex">
                 <input id="search-input" class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
                 <button id="search-btn" class="btn btn-outline-success" type="submit">Search</button>
               </form>
             </div>
             <!-- Toggle view by & recommendation -->
-            <div id="toggle-view-recom">
-              <h5>View Recommend:</h5>
+            <div id="toggle-view-recom" class="nav-choices">
+              <h6 class="recom-title-sm">View Recommend</h6>
+              <h5 class="recom-title-lg">View Recommend:</h5>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="recommend-outdoor" value="outdoor-spots"/>
                 <label class="form-check-label">Outdoor famous spots</label>
@@ -62,7 +65,8 @@
                 <label class="form-check-label">Indoor famous spots</label>
               </div>
               <hr class="dropdown-divider">
-              <h5>Toggle Search:</h5>
+              <h6 class="recom-title-sm">Toggle Search:</h6>
+              <h5 class="recom-title-lg">Toggle Search:</h5>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="recommend-outdoor" value="outdoor-spots"/>
                 <label class="form-check-label">Show Hotels</label>
