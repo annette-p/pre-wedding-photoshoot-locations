@@ -95,7 +95,7 @@ p {
 }
 
 #map {
-  height: 600px;
+  height: 550px;
   border: 1px solid black;
 }
 
@@ -182,15 +182,22 @@ p {
   margin-bottom: 15px;
 }
 
-/* #try {
-  background-color: rgb(197, 231, 220);
-  border: solid black;
-  margin-bottom: 30px;
-} */
+.weather-row {
+  margin-left: 30px;
+  margin-right: 30px;
+}
 
-.try2 {
-  border: solid pink;
-  margin-bottom: 20px;
+#weather-btn-col {
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 60px;
+  margin-bottom: 15px;
+}
+
+#weather-title {
+  text-align: center;
+  padding-right: 60px;
 }
 
 /* .weather-col {
@@ -204,6 +211,10 @@ p {
   padding-right: 25px;
 }
 
+#forecast-24hr {
+  padding-right: 16px;
+}
+
 .fa-temperature-low {
   color: green;
 }
@@ -211,6 +222,12 @@ p {
 .weather-text {
   color: rgb(105, 102, 102);
   font-size: large;
+}
+
+#weather-display {
+  align-items: center;
+  text-align: center;
+  padding-top: 15px;
 }
 
 
@@ -224,6 +241,10 @@ p {
   /* #popular-spot {
     display: inline;
   } */
+
+  #map {
+    height: 750px;
+  }
 
   .card-header {
     font-size: larger;
@@ -251,10 +272,16 @@ p {
     margin-bottom: 20px;
   }
 
+  .weather-row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   #weather-btn-col {
     align-items: center;
     padding-top: 15px;
     padding-bottom: 15px;
+    margin-bottom: 0;
   }
 
   #weather-title {
@@ -262,10 +289,8 @@ p {
   }
 
   .btn-custom {
-    font-size: 18px;
+    font-size: 19px;
     margin-top: 15px;
-    margin-left: 25px;
-    padding-right: 25px;
   }
 
   #forecast-24hr {
@@ -273,9 +298,7 @@ p {
   }
 
   #weather-display {
-    align-items: center;
-    text-align: center;
-    padding-top: 40px;
+    padding-top: 50px;
   }
 
 }
@@ -287,6 +310,10 @@ p {
   /* .nav-container {
     width: 32%;
   } */
+
+  #map {
+    height: 650px;
+  }
 
   .d-flex {
     width: 500px;
@@ -320,9 +347,9 @@ p {
   } */
 
   #weather-btn-col {
-    align-items: center;
-    padding-top: 15px;
     padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 10px;
   }
 
   #weather-title {
@@ -331,7 +358,7 @@ p {
   }
 
   .btn-custom {
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 15px;
     margin-left: 25px;
     padding-right: 25px;
@@ -343,6 +370,10 @@ p {
 
   #forecast-4days {
     margin-bottom: 20px;
+  }
+
+  #weather-display {
+    padding-top: 60px;
   }
 
 }
