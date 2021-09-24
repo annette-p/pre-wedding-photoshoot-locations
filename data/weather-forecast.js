@@ -165,7 +165,8 @@ function display24hrWeather(weatherData, forecastDisplayResult) {
             <li class="list-group-item afternoon">Afternoon</li>
             <li class="list-group-item night">Night</li>
         </ul>
-        <h3>24 Hours Forecast</h3>
+        <h3 class="forecast24hr-md-text">24 Hours Forecast</h3>
+        <h4 class="forecast24hr-sm-text">24 Hours Forecast</h4>
         <p class="weather-text">${forecast}</p>
         ${weatherIcon}
         <div style="font-size: 50px;"></div>

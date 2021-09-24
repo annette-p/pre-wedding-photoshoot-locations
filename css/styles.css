@@ -219,15 +219,15 @@ p {
   color: green;
 }
 
-.weather-text {
-  color: rgb(105, 102, 102);
-  font-size: large;
-}
-
 #weather-display {
   align-items: center;
   text-align: center;
-  padding-top: 15px;
+  padding-top: 10px;
+}
+
+.list-group {
+  padding-bottom: 15px;
+  /* padding-right: 5px; */
 }
 
 .morning:hover,
@@ -236,6 +236,19 @@ p {
   /* text-decoration: underline; */
   color: green;
   font-weight: bold;
+}
+
+.forecast24hr-md-text {
+  display: none;
+}
+
+.forecast24hr-sm-text {
+  display: block;
+}
+
+.weather-text {
+  color: rgb(105, 102, 102);
+  font-size: large;
 }
 
 
@@ -315,6 +328,14 @@ p {
     padding-right: 5px;
   }
 
+  .forecast24hr-sm-text {
+    display: none;
+  }
+
+  .forecast24hr-md-text {
+    display: block;
+  }
+
 }
 
 /* .............................................................. */
@@ -388,7 +409,6 @@ p {
 
   #weather-display {
     padding-top: 25px;
-    align-items: center;
   }
 
   .list-group {
