@@ -151,12 +151,12 @@ function display24hrWeather(weatherData, forecastDisplayResult) {
     let lowTemp = weatherData.items[0].general.temperature.low;
     let highTemp = weatherData.items[0].general.temperature.high;  
 
-    // let aveTemp = Math.floor((lowTemp + highTemp) / 2)
-
+    // get the weather icon based on forecast
     let weatherIcon = getWeatherIcon(forecast, false);
+    // increase the icon size
     const node = new DOMParser();
     let i = node.parseFromString(weatherIcon, "text/html").querySelector('i');
-    i.style = 'font-size: 60px';
+    i.style = 'font-size: 60px';   
     weatherIcon = i.outerHTML;
 
     let weatherText = `
