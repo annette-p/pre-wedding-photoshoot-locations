@@ -6,7 +6,17 @@ function mainMap() {
   let map = L.map("map", {zoomControl: false})
   new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
-  map.setView(singapore, 12);
+  // set for different screensize
+  // https://stackoverflow.com/questions/23910594/leaflet-responsive-design-creating-different-zoom-levels-for-different-screen
+  let width = document.documentElement.clientWidth;
+  let zoomLevel = 12;
+  if (width < 768) {
+    zoomLevel = 10.5; // phone - set the zoom level to 10
+  } else if (width < 992) {
+    zoomLevel = 11.5; // ipad
+  }
+
+  map.setView(singapore, zoomLevel);
 
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",

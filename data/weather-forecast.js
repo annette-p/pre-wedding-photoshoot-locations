@@ -169,7 +169,6 @@ function display24hrWeather(weatherData, forecastDisplayResult) {
         <h4 class="forecast24hr-sm-text">24 Hours Forecast</h4>
         <p class="weather-text">${forecast}</p>
         ${weatherIcon}
-        <div style="font-size: 50px;"></div>
 
         <p class="weather-text"><i class="fas fa-temperature-low"></i> &nbsp;${lowTemp} &deg;C / <i class="fas fa-temperature-high"></i> &nbsp;${highTemp} &deg;C</p>
     `;
