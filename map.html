@@ -91,11 +91,12 @@
 
     <section>
       <!-- Weather Forecast -->
-      <div id="weather-container" class="container px-4">
-        <div class="row gx-5">
-          <div class="col-4 align-self-start">
-           <div class="p-3 border bg-light">
-             <h5>Weather <i id="default-cloud" class="fas fa-cloud-sun weather-icon"></i></h5>
+      <div class="container-fluid weather-container">
+        <div class="row">
+          <div class="col-2 weather-col"></div>
+          <!-- forecast bottons -->
+          <div class="col-2 border bg-light weather-col">
+            <h5>Weather <i id="default-cloud" class="fas fa-cloud-sun weather-icon"></i></h5>
              <div>
               <button id="forecast-2hr" class="btn btn-outline-success btn-custom" type="button">2-hour Forecast</button>
              </div>
@@ -103,16 +104,17 @@
               <button id="forecast-24hr" class="btn btn-outline-success btn-custom" type="button">24-hour Forecast</button>
              </div>
              <div>
-              <button class="btn btn-outline-success btn-custom" type="button">4 Days Forecast</button>
+              <button id="forecast-4days" class="btn btn-outline-success btn-custom" type="button">4 Days Forecast</button>
              </div>
-           </div>
           </div>
-          <div class="col">
-            <div id="weather-display" class="p-3 border bg-light"></div>
+          <div class="col-1 weather-col"></div>
+          <!-- display forecast result -->
+          <div class="col border bg-light weather-col">
+            <div id="weather-display"></div>
           </div>
+          <div class="col-2 weather-col"></div>
         </div>
       </div>
-    </section>
 
     <!-- third-party -->
     <script src="script/bootstrap.bundle.min.js"></script> <!-- Bootstrap js Bundle with Popper -->

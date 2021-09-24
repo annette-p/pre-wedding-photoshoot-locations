@@ -131,22 +131,11 @@ p {
   color: red;
 }
 
-#weather-container {
-  padding-top: 25px;
-  padding-bottom: 20px;
-}
-
 .weather-icon,
 .cloudy-icon,
 .fa-cloud,
 #default-cloud {
   color: rgb(55, 172, 245)
-}
-
-.btn-custom {
-  background-color: rgb(245, 245, 159);
-  font-size: 18px;
-  margin-top: 15px;
 }
 
 .weather-marker-icon {
@@ -262,5 +251,36 @@ p {
 
   #search-result-display {
     font-size: large;
+  }
+
+  .weather-container {
+    /* background-color: rgb(197, 231, 220); */
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+
+  /* .weather-col {
+    border: solid black;
+  } */
+
+  .btn-custom {
+    background-color: rgb(245, 245, 159);
+    font-size: 18px;
+    margin-top: 15px;
+    padding-right: 25px;
+  }
+
+  #forecast-24hr {
+    padding-right: 15px;
+  }
+
+  #forecast-4days {
+    margin-bottom: 20px;
+  }
+
+  #weather-display {
+    align-items: center;
+    text-align: center;
+    padding-top: 25px;
   }
 }
