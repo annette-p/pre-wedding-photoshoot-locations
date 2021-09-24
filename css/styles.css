@@ -1,5 +1,4 @@
-.main-section,
-.map-container {
+.main-section {
   position: relative;
 }
 
@@ -55,6 +54,11 @@ p {
 }
 
 /* ..........................style for map.html.................................... */
+
+.map-container {
+  position: relative;
+}
+
 .nav-container {
   position: absolute;
   z-index: 314159;
