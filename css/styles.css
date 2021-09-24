@@ -182,6 +182,17 @@ p {
   margin-bottom: 15px;
 }
 
+/* #try {
+  background-color: rgb(197, 231, 220);
+  border: solid black;
+  margin-bottom: 30px;
+} */
+
+.try2 {
+  border: solid pink;
+  margin-bottom: 20px;
+}
+
 /* .weather-col {
     border: solid black;
   } */
@@ -234,6 +245,12 @@ p {
   #search-result-display {
     font-size: large;
   }
+
+  .weather-container {
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+
 }
 
 /* .............................................................. */
@@ -289,10 +306,9 @@ p {
   .btn-custom {
     font-size: 18px;
     margin-top: 15px;
+    margin-left: 25px;
     padding-right: 25px;
   }
-
-  /* ----------------------------------to Con't -------------------------------------- */
 
   #forecast-24hr {
     padding-right: 15px;
