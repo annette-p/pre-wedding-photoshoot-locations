@@ -157,7 +157,8 @@ function display24hrWeather(weatherData, forecastDisplayResult) {
     let weatherText = `
         <h3>24 Hours Forecast</h3>
         <p class="weather-text">${forecast}</p>
-        ${weatherIcon} 
+        ${weatherIcon}
+        <div style="font-size: 50px;"></div>
 
         <p class="weather-text"><i class="fas fa-temperature-low"></i> &nbsp;${lowTemp} &deg;C / <i class="fas fa-temperature-high"></i> &nbsp;${highTemp} &deg;C</p>
     `;

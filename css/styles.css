@@ -176,6 +176,23 @@ p {
   color: rgb(1, 1, 71);
 }
 
+.weather-container {
+  /* background-color: rgb(197, 231, 220); */
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* .weather-col {
+    border: solid black;
+  } */
+
+.btn-custom {
+  background-color: rgb(245, 245, 159);
+  font-size: 15px;
+  margin-top: 15px;
+  padding-right: 25px;
+}
+
 .fa-temperature-low {
   color: green;
 }
@@ -254,21 +271,28 @@ p {
   }
 
   .weather-container {
-    /* background-color: rgb(197, 231, 220); */
     margin-top: 25px;
     margin-bottom: 20px;
   }
 
-  /* .weather-col {
-    border: solid black;
-  } */
+  #weather-btn-col {
+    align-items: center;
+    padding-top: 15px;
+    padding-left: 50px;
+  }
+
+  #weather-title {
+    text-align: center;
+    padding-right: 40px;
+  }
 
   .btn-custom {
-    background-color: rgb(245, 245, 159);
     font-size: 18px;
     margin-top: 15px;
     padding-right: 25px;
   }
+
+  /* ----------------------------------to Con't -------------------------------------- */
 
   #forecast-24hr {
     padding-right: 15px;
@@ -281,6 +305,6 @@ p {
   #weather-display {
     align-items: center;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 30px;
   }
 }
