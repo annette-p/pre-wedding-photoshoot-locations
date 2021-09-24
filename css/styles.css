@@ -251,6 +251,33 @@ p {
     margin-bottom: 20px;
   }
 
+  #weather-btn-col {
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  #weather-title {
+    text-align: center;
+  }
+
+  .btn-custom {
+    font-size: 18px;
+    margin-top: 15px;
+    margin-left: 25px;
+    padding-right: 25px;
+  }
+
+  #forecast-24hr {
+    padding-right: 14px;
+  }
+
+  #weather-display {
+    align-items: center;
+    text-align: center;
+    padding-top: 40px;
+  }
+
 }
 
 /* .............................................................. */
@@ -287,10 +314,10 @@ p {
     font-size: large;
   }
 
-  .weather-container {
+  /* .weather-container {
     margin-top: 25px;
     margin-bottom: 20px;
-  }
+  } */
 
   #weather-btn-col {
     align-items: center;
@@ -318,9 +345,4 @@ p {
     margin-bottom: 20px;
   }
 
-  #weather-display {
-    align-items: center;
-    text-align: center;
-    padding-top: 30px;
-  }
 }
