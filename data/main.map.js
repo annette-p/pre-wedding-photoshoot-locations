@@ -1,7 +1,7 @@
 // Leaflet map: https://leafletjs.com/reference-1.7.1.html
 
 function mainMap() {
-  let singapore = [1.29, 103.85]; // [ <lat>, <lng> ]
+  let singapore = [1.34, 103.85]; // [ <lat>, <lng> ]
   // locate leaflet zoom control in a desired position
   let map = L.map("map", {zoomControl: false})
   new L.Control.Zoom({ position: 'topright' }).addTo(map);

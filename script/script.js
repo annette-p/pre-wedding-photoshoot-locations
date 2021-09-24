@@ -158,16 +158,27 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   /* ....................................Weather Forecast ................................................*/
 
+  /*
+    How to get the first property of an object?
+    https://stackoverflow.com/questions/983267/how-to-access-the-first-property-of-a-javascript-object
+  */
+
   // layers for weather forecast
   let display2hrWeatherLayer = new L.layerGroup();
+  let display24hrWeatherLayers = []
+
+  map.addLayer(display2hrWeatherLayer);
 
   /* 2-hours Weather Forecast */ 
   let forecast2Hr = document.querySelector("#forecast-2hr");
 
   forecast2Hr.addEventListener ("click", async function () {
+    // clear the layers for 2hr & 24hr layers
     display2hrWeatherLayer.clearLayers();
+    display24hrWeatherLayers.map( a => map.removeLayer(Object.values(a)[0]) )
+    display24hrWeatherLayers = []
+
     await get2hrWeather(display2hrWeatherLayer, map);
-    map.addLayer(display2hrWeatherLayer);
   });
 
   /* 24-hours Weather Forecast */ 
@@ -175,8 +186,23 @@ window.addEventListener("DOMContentLoaded", async function () {
   let forecastDisplayResult = document.querySelector("#weather-display");
 
   forecast24Hr.addEventListener ("click", async function () {
+    // clear the layers for 2hr & 24hr layers
     display2hrWeatherLayer.clearLayers();
-    await get24hrWeather(forecastDisplayResult);
+    display24hrWeatherLayers.map( a => map.removeLayer(Object.values(a)[0]) )
+
+    // Retrieve the 24 hours weather data
+    await get24hrWeather()
+    .then( (weatherDataFor24Hr) => {
+
+      // display the 24 hours weather display
+      display24hrWeather(weatherDataFor24Hr, forecastDisplayResult);
+
+      // prepare the layers for the 24 hours weather data (will have 3 layers for Morning, Afternoon, Night)
+      display24hrWeatherLayers = prepareLayers24hrWeather(weatherDataFor24Hr);
+      let nextWeatherObject = display24hrWeatherLayers[0];
+      map.addLayer(Object.values(nextWeatherObject)[0]);
+
+    })
   });
 
 });
