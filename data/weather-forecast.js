@@ -154,7 +154,17 @@ function display24hrWeather(weatherData, forecastDisplayResult) {
     // let aveTemp = Math.floor((lowTemp + highTemp) / 2)
 
     let weatherIcon = getWeatherIcon(forecast, false);
+    const node = new DOMParser();
+    let i = node.parseFromString(weatherIcon, "text/html").querySelector('i');
+    i.style = 'font-size: 60px';
+    weatherIcon = i.outerHTML;
+
     let weatherText = `
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item morning">Morning</li>
+            <li class="list-group-item afternoon">Afternoon</li>
+            <li class="list-group-item night">Night</li>
+        </ul>
         <h3>24 Hours Forecast</h3>
         <p class="weather-text">${forecast}</p>
         ${weatherIcon}

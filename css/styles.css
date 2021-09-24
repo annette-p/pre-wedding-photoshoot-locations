@@ -173,7 +173,7 @@ p {
 
 .heavy-thundery-showers-icon,
 .fa-poo-storm {
-  color: rgb(1, 1, 71);
+  color: rgb(31, 31, 68);
 }
 
 .weather-container {
@@ -228,6 +228,14 @@ p {
   align-items: center;
   text-align: center;
   padding-top: 15px;
+}
+
+.morning:hover,
+.afternoon:hover,
+.night:hover {
+  /* text-decoration: underline; */
+  color: green;
+  font-weight: bold;
 }
 
 
@@ -298,7 +306,7 @@ p {
   }
 
   #weather-display {
-    padding-top: 50px;
+    padding-top: 20px;
   }
 
 }
@@ -373,7 +381,13 @@ p {
   }
 
   #weather-display {
-    padding-top: 60px;
+    padding-top: 25px;
+    align-items: center;
+  }
+
+  .list-group {
+    padding-bottom: 20px;
+    padding-left: 120px;
   }
 
 }
