@@ -73,6 +73,25 @@
   background-image: url("../images/punggol_lalang_fields.jpg");
 }
 
+.article-spots {
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+}
+
+#article-spots-img1 {
+  background-image: url("../images/pre-wedding_jurong_lake_gardens_lalang_field.jpg");
+}
+
+#article-spots-img2 {
+  background-image: url("../images/pre-wedding_lower_peirce_reservoir.png");
+}
+
+#article-spots-img3 {
+  background-image: url("../images/pre-wedding_fort_canning_park2.jpg");
+}
+
 #popular-spot {
   text-align: center;
 }
