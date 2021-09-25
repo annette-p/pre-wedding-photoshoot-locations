@@ -273,6 +273,11 @@
   padding-top: 10px;
 }
 
+#weather-4d-display {
+  width: 310px;
+  margin-left: -38px;
+}
+
 .list-group {
   padding-bottom: 15px;
   /* padding-right: 5px; */
@@ -305,10 +310,6 @@
 }
 
 .weather-4days-result-col {
-  text-align: left;
-}
-
-.temp-weather-4days-result-col {
   text-align: center;
 }
 
@@ -410,6 +411,15 @@
   #weather-4d-display {
     padding-top: 10px;
     align-items: center;
+  }
+
+  #weather-4d-display {
+    width: 300px;
+    margin-left: -35px;
+  }
+
+  .weather-4days-result-col {
+    text-align: center;
   }
 
   .list-group {
