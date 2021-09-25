@@ -5,9 +5,11 @@
   position: relative;
 }
 
-.navbar {
+#landing-page-navbar {
   position: absolute;
   z-index: 15;
+  text-align: center;
+  align-items: center;
 }
 
 .container-fluid {
