@@ -4,75 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap CSS -->
-    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
-    <!-- Leaflet CSS -->
-    <link href="CSS/leaflet.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- the leaflet CSS-->
+    <link href="third-party/leaflet/leaflet.css" rel="stylesheet" />
+    <!-- Font Awesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom CSS -->
-    <link rel="stylesheet" href="CSS/styles.css" />
-    <title>Pre-Wedding Photoshoot Location</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Index Page</title>
   </head>
   <body>
-    <main>
-      <div class="main-section">
-        <!-- Search Navbar -->
-        <!-- navbar-light bg-transparent -->
+    <section>
+      <div class="container-fluid landing-page-section">
+        <!-- Search Navbar -->  <!-- navbar-light bg-transparent -->
         <nav class="navbar top-50 start-50 translate-middle">
           <div class="container-fluid mx-auto">
             <h1>Pre-Wedding Shoot Locations</h1>
             <p>EXPLORE SECRET NATURE SPOTS AND PARKS IN SINGAPORE</p>
             <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Enter location or park e.g Fort Canning"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
+              <input class="form-control me-2" type="search" placeholder="Enter location or park e.g Fort Canning" aria-label="Search"/>
+              <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
         </nav>
         <!-- End of Search Navbar -->
 
         <!-- Carousel -->
-        <div
-          id="carouselExampleFade"
-          class="carousel slide carousel-fade"
-          data-bs-ride="carousel"
-        >
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div id="carousel-img1" class="carousel-item active"></div>
-            <div id="carousel-img2" class="carousel-item"></div>
-            <div id="carousel-img3" class="carousel-item"></div>
-            <div id="carousel-img4" class="carousel-item"></div>
-            <div id="carousel-img5" class="carousel-item"></div>
-            <div id="carousel-img6" class="carousel-item"></div>
+            <div id="carousel-img1" class="img-fluid carousel-item active"></div>
+            <div id="carousel-img2" class="img-fluid carousel-item"></div>
+            <div id="carousel-img3" class="img-fluid carousel-item"></div>
+            <div id="carousel-img4" class="img-fluid carousel-item"></div>
+            <div id="carousel-img5" class="img-fluid carousel-item"></div>
+            <div id="carousel-img6" class="img-fluid carousel-item"></div>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleFade"
-            data-bs-slide="prev"
-          >
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleFade"
-            data-bs-slide="next"
-          >
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
         <!-- End of Carousel -->
       </div>
-    </main>
+    </section>
 
-    <section>
+    <article>
       <!-- Popular spots columns -->
       <div class="container pt-2 ps-5 pt-lg-3 ps-lg-0">
         <div id="popular-spot" class="row">
@@ -123,15 +105,20 @@
         </div>
       </div>
       <!-- End of columns -->
-    </section>
+    </article>
 
-    <!-- Bootstrap js Bundle with Popper -->
-    <script src="script/bootstrap.bundle.min.js"></script>
-    <!-- Leaflet js -->
-    <script src="script/leaflet.js"></script>
-    <!-- axios -->
-    <script src="script/axios.min.js"></script>
+    <!-- third-party -->
+    <script src="script/bootstrap.bundle.min.js"></script> <!-- Bootstrap js Bundle with Popper -->
+    <script src="third-party/leaflet/leaflet.js"></script>  <!-- Leaflet js -->
+    <script src="third-party/moment.js"></script>  <!-- library for time conversion (YYYY-MM-DD[T]HH:mm:ss) -->
+    <script src="script/axios.min.js"></script> <!-- axios -->
     <!-- Custom script -->
+    <script src="data/constants.js"></script>
+    <script src="data/secrets.js"></script>
+    <script src="data/main.map.js"></script> <!-- map: Leaflet -->
+    <script src="data/location-data-extraction.js"></script> <!-- Four Square Places Location and National Park -->
+    <script src="data/locations-mapping.js"></script>
+    <script src="data/weather-forecast.js"></script>
     <script src="script/script.js"></script>
   </body>
 </html>

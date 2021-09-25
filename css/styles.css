@@ -1,4 +1,7 @@
-.main-section {
+
+/* ..........................style for PAGE1 lending page.................................... */
+
+.landing-page-section {
   position: relative;
 }
 
@@ -17,7 +20,9 @@ p {
 }
 
 .carousel-item {
-  height: 100vh;
+  height: 70vh;
+  max-width: 100%;
+  background-position: center;
   background-size: cover;
 }
 
@@ -53,7 +58,7 @@ p {
   padding-bottom: 15px;
 }
 
-/* ..........................style for map.html.................................... */
+/* ..........................style for PAGE2 map session.................................... */
 
 .map-container {
   position: relative;
@@ -254,15 +259,20 @@ p {
 
 /* ..........................style for meduim and large screen.................................... */
 
-/* for iPad */
-@media (min-width: 768px) {
-  /* .nav-container {
-    width: 45%;
-  } */
-  /* #popular-spot {
-    display: inline;
-  } */
+/*................ for iPad ................ */
 
+@media (min-width: 768px) {
+
+  /* PAGE1 lending page */
+
+  .carousel-item {
+    height: 80vh;
+    max-width: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  /* PAGE2 map session */
   #map {
     height: 750px;
   }
@@ -338,14 +348,24 @@ p {
 
 }
 
-/* .............................................................. */
-
-/* for laptop */
+/*................ for laptop ................*/
 @media (min-width: 992px) {
-  /* .nav-container {
-    width: 32%;
-  } */
 
+  /* PAGE1 lending page */
+
+  .carousel-item {
+    height: 90vh;
+    background-position: center;
+    background-size: cover;
+  }
+
+  #carousel-img6 {
+    background-image: url("../images/punggol_lalang_fields.jpg");
+    background-position: center bottom;
+  }
+
+
+  /* PAGE2 map session */
   #map {
     height: 650px;
   }
