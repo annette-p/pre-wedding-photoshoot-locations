@@ -30,6 +30,18 @@
   font-size: small;
 }
 
+.nav-search-btn {
+  background-color: bisque;
+}
+
+.landing-page-searchbox {
+  height: 30px;
+}
+
+.fa-search {
+  font-size: 19px;
+}
+
 .carousel-item {
   height: 70vh;
   max-width: 100%;
@@ -296,6 +308,14 @@
     font-size: medium;
   }
 
+  .landing-page-searchbox {
+    height: 38px;
+  }
+
+  .fa-search {
+    font-size: 21px;
+  }
+
 
   /* PAGE2 map session */
   #map {
@@ -374,6 +394,7 @@
 }
 
 /*................ for laptop ................*/
+
 @media (min-width: 992px) {
 
   /* PAGE1 lending page */
