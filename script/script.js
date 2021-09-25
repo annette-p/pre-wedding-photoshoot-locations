@@ -176,33 +176,110 @@ window.addEventListener("DOMContentLoaded", async function () {
     // clear the layers for 2hr & 24hr layers
     display2hrWeatherLayer.clearLayers();
     display24hrWeatherLayers.map( a => map.removeLayer(Object.values(a)[0]) )
-    display24hrWeatherLayers = []
 
-    await get2hrWeather(display2hrWeatherLayer, map);
+    await getWeatherData(weather2hrAPI)
+    .then( (weatherData) => {
+      let weatherDataFor2Hr = weatherData
+      display2hrWeather(weatherDataFor2Hr, display2hrWeatherLayer, map)
+    })
   });
 
   /* 24-hours Weather Forecast */ 
   let forecast24Hr = document.querySelector("#forecast-24hr");
-  let forecastDisplayResult = document.querySelector("#weather-display");
+  let forecast24hDisplayResult = document.querySelector("#weather-display");
+  let forecast4dDisplayResult = document.querySelector("#weather-4d-display");
 
-  forecast24Hr.addEventListener ("click", async function () {
-    // clear the layers for 2hr & 24hr layers
-    display2hrWeatherLayer.clearLayers();
-    display24hrWeatherLayers.map( a => map.removeLayer(Object.values(a)[0]) )
+  // store the 24 hours weather data
+  let weatherDataFor24Hr = undefined;
 
-    // Retrieve the 24 hours weather data
-    await get24hrWeather()
-    .then( (weatherDataFor24Hr) => {
+  // Retrieve the 24 hours weather data
+  await getWeatherData(weather24hrAPI)
+  .then( (weatherData) => {
 
-      // display the 24 hours weather display
-      display24hrWeather(weatherDataFor24Hr, forecastDisplayResult);
+    weatherDataFor24Hr = weatherData;
 
-      // prepare the layers for the 24 hours weather data (will have 3 layers for Morning, Afternoon, Night)
-      display24hrWeatherLayers = prepareLayers24hrWeather(weatherDataFor24Hr);
+    // display the 24 hours weather display
+    display24hrWeather(weatherDataFor24Hr, forecast24hDisplayResult);
+    forecast24hDisplayResult.style.display = "block"
+    forecast4dDisplayResult.style.display = "none";
+
+    // prepare the layers for the 24 hours weather data (will have 3 layers for Morning, Afternoon, Night)
+    display24hrWeatherLayers = prepareLayers24hrWeather(weatherDataFor24Hr, map);
+  
+    for (let i = 0; i < display24hrWeatherLayers.length; i++) {
+
+      // get the time of day and its layer with weather icons
+      let nextWeatherObject = display24hrWeatherLayers[i];
+      let timeOfDay = Object.keys(nextWeatherObject)[0];
+      let weatherLayer = Object.values(nextWeatherObject)[0];
+
+      // get the DOM element for the list item for time of day
+      let timeOfDayListItem = document.querySelector(`.list-group-item.${timeOfDay}`);
+
+      timeOfDayListItem.addEventListener("click", function () {
+
+        // clear the layers for 2hr & 24hr layers
+        display2hrWeatherLayer.clearLayers();
+        display24hrWeatherLayers.map( a => map.removeLayer(Object.values(a)[0]) );
+
+        // clear background of list items
+        (document.querySelectorAll('.list-group-item')).forEach( a => a.style.background = "");
+        // set background of clicked list item to grey color
+        timeOfDayListItem.style.background = "rgb(216, 231, 226)";
+
+        // display current weather layer
+        map.addLayer(weatherLayer);
+      });
+    }
+
+    forecast24Hr.addEventListener("click", function () {
+
+      // clear the layers for 2hr & 24hr layers
+      display2hrWeatherLayer.clearLayers();
+      display24hrWeatherLayers.map( a => map.removeLayer(Object.values(a)[0]) );
+
+      // show the display result div for 24 hours weather forecast
+      forecast24hDisplayResult.style.display = "block"
+
+      // hide the display result div for 4 days weather forecast
+      forecast4dDisplayResult.style.display = "none";
+
+      // display the first layer in "display24hrWeatherLayers" array
       let nextWeatherObject = display24hrWeatherLayers[0];
-      map.addLayer(Object.values(nextWeatherObject)[0]);
+      let timeOfDay = Object.keys(nextWeatherObject)[0];
+      let weatherLayer = Object.values(nextWeatherObject)[0];
 
-    })
+      // clear background of list items that are not selected
+      let listItems = document.querySelectorAll('.list-group-item');
+      listItems.forEach( a => {
+        if (a.classList.contains(timeOfDay)) {
+          a.style.background = "rgb(216, 231, 226)"
+        } else {
+          a.style.background = ""
+        }
+      });
+
+      map.addLayer(weatherLayer);
+    });
+
+  })
+
+  /* 4-days Weather Forecast */
+
+  // store the 4-days weather data
+  let weatherDataFor4Days = undefined;
+  await getWeatherData(weather4dayAPI)
+  .then( (weatherData) => {
+    weatherDataFor4Days = weatherData;
+    display4DayWeather(weatherDataFor4Days, forecast4dDisplayResult);
+  });
+
+  let forecast4Day = document.querySelector("#forecast-4days");
+  forecast4Day.addEventListener ("click", async function () {
+    // hide the display result div for 24 hours weather forecast
+    forecast24hDisplayResult.style.display = "none"
+    // show the display result div for 4 days weather forecast
+    forecast4dDisplayResult.style.display = "block";
   });
 
 });

@@ -107,3 +107,12 @@ const heavyThunderyShowersIcon = L.divIcon({
   iconSize: [20, 20],
   className: 'heavy-thundery-showers-icon'
 });
+
+// tooltips marker to display date & time
+const clockIcon = L.divIcon({
+  html: '<i class="far fa-clock"></i>',
+  iconSize: [20, 20],
+  className: 'clock-icon'
+});
+
+/* ........................end of Weather icons......................... */

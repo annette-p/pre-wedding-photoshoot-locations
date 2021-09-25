@@ -266,7 +266,8 @@
   color: green;
 }
 
-#weather-display {
+#weather-display,
+#weather-4d-display {
   align-items: center;
   text-align: center;
   padding-top: 10px;
@@ -296,6 +297,11 @@
 .weather-text {
   color: rgb(105, 102, 102);
   font-size: large;
+}
+
+.fa-clock {
+  font-size: 25px;
+  color: red;
 }
 
 
@@ -392,7 +398,8 @@
     padding-right: 14px;
   }
 
-  #weather-display {
+  #weather-display,
+  #weather-4d-display {
     padding-top: 10px;
     align-items: center;
   }
@@ -491,7 +498,8 @@
     margin-bottom: 20px;
   }
 
-  #weather-display {
+  #weather-display,
+  #weather-4d-display {
     padding-top: 25px;
   }
 
