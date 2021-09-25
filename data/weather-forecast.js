@@ -199,14 +199,16 @@ function display4DayWeather(weatherData, forecastDisplayResult) {
         let weatherText = `
         <li class="list-group-item">
             <div class="row">
-            <div class="col-3">
-                ${weatherIcon}
-            </div>
-            <div class="col-9">
-                <b>${dayOfWeek}</b> &nbsp;&nbsp; ${forecast}
-                <br><i class="fas fa-temperature-low"></i> ${lowTemp} &deg;C / 
-                    <i class="fas fa-temperature-high"></i> &nbsp;${highTemp} &deg;C
-            </div>
+                <div class="col-2 weather-4days-result-col">
+                    ${weatherIcon}
+                </div>
+                <div class="col-10 weather-4days-result-col">
+                    <b>${dayOfWeek}</b> &nbsp;&nbsp; ${forecast}
+                    <div class="temp-weather-4days-result-col">
+                        <i class="fas fa-temperature-low"></i> ${lowTemp} &deg;C / 
+                        <i class="fas fa-temperature-high"></i> &nbsp;${highTemp} &deg;C
+                    </div>
+                </div>
             </div>
         </li>
         `

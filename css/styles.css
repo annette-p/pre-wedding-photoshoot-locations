@@ -304,6 +304,14 @@
   color: red;
 }
 
+.weather-4days-result-col {
+  text-align: left;
+}
+
+.temp-weather-4days-result-col {
+  text-align: center;
+}
+
 
 /* ..........................style for meduim and large screen.................................... */
 
@@ -501,6 +509,11 @@
   #weather-display,
   #weather-4d-display {
     padding-top: 25px;
+  }
+
+  #weather-4d-display {
+    width: 500px;
+    margin-left: -10px;
   }
 
   .list-group {
