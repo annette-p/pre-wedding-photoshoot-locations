@@ -3,6 +3,7 @@
 
 .landing-page-section {
   position: relative;
+  align-self: center;
 }
 
 #landing-page-navbar {
@@ -12,13 +13,21 @@
   align-items: center;
 }
 
-.container-fluid {
-  align-self: center;
+#icon-wedding {
+  width: 110px;
 }
 
-p {
-  color: white;
+.landing-page-navtext {
+  color: aliceblue;
+}
+
+.navtext-h {
+  font-size: large;
   font-weight: bold;
+}
+
+.navtext-sm-p {
+  font-size: small;
 }
 
 .carousel-item {
@@ -274,6 +283,20 @@ p {
     background-size: cover;
   }
 
+  #icon-wedding {
+    width: 200px;
+  }
+
+  .navtext-h {
+    font-size: xx-large;
+    /* font-weight: bolder; */
+  }
+
+  .navtext-sm-p {
+    font-size: medium;
+  }
+
+
   /* PAGE2 map session */
   #map {
     height: 750px;
@@ -364,6 +387,10 @@ p {
   #carousel-img6 {
     background-image: url("../images/punggol_lalang_fields.jpg");
     background-position: center bottom;
+  }
+
+  #icon-wedding {
+    width: 230px;
   }
 
 
