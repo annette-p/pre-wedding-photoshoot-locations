@@ -435,6 +435,18 @@
     display: block;
   }
 
+  #weather-anime {
+    display: none;
+    background-image: url("../images/animated_weather_icon.gif");
+    background-position: center;
+    background-size: cover;
+    align-items: left !important;
+    height: 160px;
+    width: 100%;
+    margin: 25px;
+    margin-left: -10px;
+  }
+
 }
 
 /*................ for laptop ................*/
@@ -533,6 +545,10 @@
 
   .weather-text {
     padding-top: 10px;
+  }
+
+  #weather-anime {
+    display: none;
   }
 
 }

@@ -169,6 +169,9 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   map.addLayer(display2hrWeatherLayer);
 
+  /* Animated gif to display for 4 days Weather Forecast */ 
+  let weatherAnnime = document.querySelector("#weather-anime");
+
   /* 2-hours Weather Forecast */ 
   let forecast2Hr = document.querySelector("#forecast-2hr");
 
@@ -176,6 +179,9 @@ window.addEventListener("DOMContentLoaded", async function () {
     // clear the layers for 2hr & 24hr layers
     display2hrWeatherLayer.clearLayers();
     display24hrWeatherLayers.map( a => map.removeLayer(Object.values(a)[0]) )
+
+    /* Animated gif to display for 4 days Weather Forecast */
+    weatherAnnime.style.display = "none";
 
     await getWeatherData(weather2hrAPI)
     .then( (weatherData) => {
@@ -238,6 +244,9 @@ window.addEventListener("DOMContentLoaded", async function () {
       display2hrWeatherLayer.clearLayers();
       display24hrWeatherLayers.map( a => map.removeLayer(Object.values(a)[0]) );
 
+      /* Animated gif to display for 4 days Weather Forecast */
+      weatherAnnime.style.display = "none";
+
       // show the display result div for 24 hours weather forecast
       forecast24hDisplayResult.style.display = "block"
 
@@ -274,12 +283,34 @@ window.addEventListener("DOMContentLoaded", async function () {
     display4DayWeather(weatherDataFor4Days, forecast4dDisplayResult);
   });
 
+  
+
   let forecast4Day = document.querySelector("#forecast-4days");
   forecast4Day.addEventListener ("click", async function () {
     // hide the display result div for 24 hours weather forecast
     forecast24hDisplayResult.style.display = "none"
     // show the display result div for 4 days weather forecast
     forecast4dDisplayResult.style.display = "block";
+
+    /* Animated gif to display for 4 days Weather Forecast */
+    let width = document.documentElement.clientWidth;
+    if (width >= 768 && width < 992) {
+      weatherAnnime.style.display = "block";  // for ipad size
+    } else {
+      weatherAnnime.style.display = "none";
+    }
+    
+    /*
+    code in CSS: 
+    weatherAnnime.style.backgroundImage = 'url("../images/animated_weather_icon.gif")'
+    weatherAnnime.style.backgroundPosition = "center"
+    weatherAnnime.style.backgroundSize = "cover";
+    weatherAnnime.style.width = "100%";
+    weatherAnnime.style.height = "160px";
+    weatherAnnime.style.margin = "25px";
+    weatherAnnime.style.marginLeft = "-10px";
+    */
+
   });
 
 });
