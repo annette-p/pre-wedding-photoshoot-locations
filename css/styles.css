@@ -437,14 +437,14 @@
 
   #weather-anime {
     display: none;
-    background-image: url("../images/animated_weather_icon.gif");
-    background-position: center;
+    background-image: url("../images/animated_thunder_icon.gif");
+    background-position: top;
     background-size: cover;
     align-items: left !important;
     height: 160px;
     width: 100%;
-    margin: 25px;
-    margin-left: -10px;
+    margin: 20px;
+    margin-left: -20px;
   }
 
 }
