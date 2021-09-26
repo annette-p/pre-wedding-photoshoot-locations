@@ -49,6 +49,20 @@ window.addEventListener("DOMContentLoaded", async function () {
   map.addLayer(citySearchMapLayer);
   map.addLayer(parkSearchMapLayer);
 
+  document.querySelector("#home-search-btn").addEventListener("click", function(event) {
+    event.preventDefault();
+    let query = document.querySelector("#home-search-input").value;
+    document.querySelector("#search-input").value = query
+    let clickEvent = new MouseEvent("click", {
+      "view": window,
+      "bubbles": true,
+      "cancelable": false
+    });
+    document.querySelector("#search-btn").dispatchEvent(clickEvent);
+    document.querySelector("#home-page").style.display = "none";
+    document.querySelector("#map-page").style.display = "block";
+  });
+
   document.querySelector("#search-btn").addEventListener("click", async function (event) {
     event.preventDefault();
 

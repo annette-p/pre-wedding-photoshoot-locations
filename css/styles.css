@@ -1,6 +1,10 @@
 
 /* ..........................style for PAGE1 lending page.................................... */
 
+#home-page {
+  display: block;
+}
+
 .landing-page-section {
   position: relative;
   align-self: center;
@@ -101,6 +105,10 @@
 }
 
 /* ..........................style for PAGE2 map session.................................... */
+
+#map-page {
+  display: none;
+}
 
 .map-container {
   position: relative;

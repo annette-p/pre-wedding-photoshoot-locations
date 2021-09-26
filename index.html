@@ -13,88 +13,195 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Index Page</title>
+    <title>Home Page</title>
   </head>
   <body>
-    <section>
-      <div class="container-fluid landing-page-section">
-        <!-- Search Navbar -->
-        <nav id="landing-page-navbar" class="navbar top-50 start-50 translate-middle">
-          <div class="mx-auto">
-            <img src="/images/wedding_icon_2.png" id="icon-wedding" class="rounded mx-auto d-block" alt="Pre-Wedding">
-            <h1 class="d-none d-lg-block landing-page-navtext">Photoshoot Locations</h1>
-            <h2 class="d-lg-none landing-page-navtext navtext-h">Photoshoot Locations</h2>
-            <p class="d-none d-lg-block landing-page-navtext">EXPLORE SECRET NATURE SPOTS AND PARKS IN SINGAPORE</p>
-            <p class="d-lg-none landing-page-navtext navtext-sm-p">EXPLORE SECRET SPOTS IN SINGAPORE</p>
-            <form class="d-flex landing-page-searchbox">
-              <input class="form-control" type="search" placeholder="Enter location or park e.g Fort Canning" aria-label="Search"/>
-              <button class="btn btn-outline-success nav-search-btn" type="submit"><i class="fas fa-search"></i></button>
-            </form>
-          </div>
-        </nav>
-        <!-- End of Search Navbar -->
 
-        <!-- Carousel -->
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div id="carousel-img1" class="img-fluid carousel-item active"></div>
-            <div id="carousel-img2" class="img-fluid carousel-item"></div>
-            <div id="carousel-img3" class="img-fluid carousel-item"></div>
-            <div id="carousel-img4" class="img-fluid carousel-item"></div>
-            <div id="carousel-img5" class="img-fluid carousel-item"></div>
-            <div id="carousel-img6" class="img-fluid carousel-item"></div>
+    <!-- ...................................Page 1................................... -->
+    <div id="home-page">
+      <section>
+        <div class="container-fluid landing-page-section">
+          <!-- Search Navbar -->
+          <nav id="landing-page-navbar" class="navbar top-50 start-50 translate-middle">
+            <div class="mx-auto">
+              <img src="/images/wedding_icon_2.png" id="icon-wedding" class="rounded mx-auto d-block" alt="Pre-Wedding">
+              <h1 class="d-none d-lg-block landing-page-navtext">Photoshoot Locations</h1>
+              <h2 class="d-lg-none landing-page-navtext navtext-h">Photoshoot Locations</h2>
+              <p class="d-none d-lg-block landing-page-navtext">EXPLORE SECRET NATURE SPOTS AND PARKS IN SINGAPORE</p>
+              <p class="d-lg-none landing-page-navtext navtext-sm-p">EXPLORE SECRET SPOTS IN SINGAPORE</p>
+              <form class="d-flex landing-page-searchbox">
+                <input id="home-search-input" class="form-control" type="search" placeholder="Enter location or park e.g Fort Canning" aria-label="Search"/>
+                <button id="home-search-btn" class="btn btn-outline-success nav-search-btn" type="submit"><i class="fas fa-search"></i></button>
+              </form>
+            </div>
+          </nav>
+          <!-- End of Search Navbar -->
+  
+          <!-- Carousel -->
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div id="carousel-img1" class="img-fluid carousel-item active"></div>
+              <div id="carousel-img2" class="img-fluid carousel-item"></div>
+              <div id="carousel-img3" class="img-fluid carousel-item"></div>
+              <div id="carousel-img4" class="img-fluid carousel-item"></div>
+              <div id="carousel-img5" class="img-fluid carousel-item"></div>
+              <div id="carousel-img6" class="img-fluid carousel-item"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <!-- End of Carousel -->
         </div>
-        <!-- End of Carousel -->
-      </div>
-    </section>
+      </section>
+  
+      <article>
+        <!-- Popular spots columns -->
+        <div class="container pt-2 ps-5 mt-md-2 pt-lg-2 ps-lg-0">
+          <div id="popular-spot" class="row">
+            <div class="col order-last">
+              <!-- card 1 Lalang Field -->
+              <div class="card" style="width: 18rem">
+                <div id="article-spots-img1" class="article-spots"></div>
+                <div class="card-body">
+                  <!-- <p class="card-text">Jurong Lake Gardens Lalang Field</p> -->
+                  <a href="#" class="card-link">Jurong Lake Gardens Lalang Field</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <!-- card 2 Lower Peirce Reservoir -->
+              <div class="card" style="width: 18rem">
+                <div id="article-spots-img2" class="article-spots"></div>
+                <div class="card-body">
+                  <!-- <p class="card-text">Lower Peirce Reservoir</p> -->
+                  <a href="#" class="card-link">Lower Peirce Reservoir</a>
+                </div>
+              </div>
+            </div>
+            <div class="col order-first">
+              <!-- card 3 Fort Canning Park -->
+              <div class="card" style="width: 18rem">
+                <div id="article-spots-img3" class="article-spots"></div>
+                <div class="card-body">
+                  <!-- <p class="card-text">Fort Canning Park</p> -->
+                  <a href="#" class="card-link">Fort Canning Park</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of columns -->
+      </article>
+    </div>
 
-    <article>
-      <!-- Popular spots columns -->
-      <div class="container pt-2 ps-5 mt-md-2 pt-lg-2 ps-lg-0">
-        <div id="popular-spot" class="row">
-          <div class="col order-last">
-            <!-- card 1 Lalang Field -->
-            <div class="card" style="width: 18rem">
-              <div id="article-spots-img1" class="article-spots"></div>
-              <div class="card-body">
-                <!-- <p class="card-text">Jurong Lake Gardens Lalang Field</p> -->
-                <a href="#" class="card-link">Jurong Lake Gardens Lalang Field</a>
+    <!-- ...................................Page 2................................... -->
+    <div id="map-page">
+      <main>  
+        <div class="container-fluid map-container">
+          <!-- Navigation & Search bar -->
+          <div class="nav-container">
+            <!-- Navbar tap -->
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link" id="search" aria-current="true">Search</a>
+                </li>
+                <li class="nav-item">
+                  <a id="explore-tab" class="nav-link" href="#">Explore</a>
+                </li>
+                <li class="nav-item">
+                  <a id="hide" class="nav-link" href="#">Hide</a>
+                </li>
+              </ul>
+            </div>
+            <!-- End of Navbar tap -->
+            <div id="body-box" class="card-body">
+              <!-- Search: input box & button -->
+              <div id="toggle-search-form">
+                <div class="nav-choices">
+                  <label class="form-check-label"><b>Location Type:</b></label> <br>
+                  <input class="form-check-input" type="radio" name="explore" value="outdoor" checked/>
+                  <label class="form-check-label">Outdoor nature</label>
+                  <input class="form-check-input" type="radio" name="explore" value="indoor"/>
+                  <label class="form-check-label">Indoor</label>
+                  <input class="form-check-input" type="radio" name="explore" value="both"/>
+                  <label class="form-check-label">Both</label>
+                </div>
+                <form class="d-flex">
+                  <input id="search-input" class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+                  <button id="search-btn" class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+              <!-- Toggle view by & recommendation -->
+              <div id="toggle-view-recom" class="nav-choices">
+                <h6 class="recom-title-sm">View Recommend</h6>
+                <h5 class="recom-title-lg">View Recommend:</h5>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="recommend-outdoor" value="outdoor-spots"/>
+                  <label class="form-check-label">Outdoor famous spots</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="recommend-indoor" value="indoor-spots"/>
+                  <label class="form-check-label">Indoor famous spots</label>
+                </div>
+                <hr class="dropdown-divider">
+                <h6 class="recom-title-sm">Toggle Search:</h6>
+                <h5 class="recom-title-lg">Toggle Search:</h5>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="recommend-outdoor" value="outdoor-spots"/>
+                  <label class="form-check-label">Show Hotels</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="show-region" value="region"/>
+                  <label class="form-check-label">Show Regions</label>
+                </div>
+              </div>
+              <!-- Display search result -->
+              <hr class="hr-line dropdown-divider">
+              <div id="search-result-display"></div>
+              <div class="px-4 pt-1">
+                <button id="btn-reset" type="button" class="btn btn-outline-danger">Clear Result</button>
               </div>
             </div>
           </div>
-          <div class="col">
-            <!-- card 2 Lower Peirce Reservoir -->
-            <div class="card" style="width: 18rem">
-              <div id="article-spots-img2" class="article-spots"></div>
-              <div class="card-body">
-                <!-- <p class="card-text">Lower Peirce Reservoir</p> -->
-                <a href="#" class="card-link">Lower Peirce Reservoir</a>
-              </div>
+          <!-- map -->
+          <div id="map"></div>
+        </div> 
+      </main>
+  
+      <section>
+        <!-- Weather Forecast -->
+        <div class="container weather-container">
+          <div class="row justify-content-evenly weather-row">
+            <div id="weather-btn-col" class="col-sm-6 col-md-5 col-lg-3 border bg-light weather-col">
+              <h5 id="weather-title">Weather <i id="default-cloud" class="fas fa-cloud-sun weather-icon"></i></h5>
+               <div>
+                <button id="forecast-2hr" class="btn btn-outline-success btn-custom" type="button">2-hour Forecast</button>
+               </div>
+               <div>
+                <button id="forecast-24hr" class="btn btn-outline-success btn-custom" type="button">24-hour Forecast</button>
+               </div>
+               <div>
+                <button id="forecast-4days" class="btn btn-outline-success btn-custom" type="button">4 Days Forecast</button>
+               </div>
+               <div id="weather-anime">
+                 <!-- <img src="/images/animated_weather_icon.gif" alt="Animated Weather Icon"> -->
+               </div>
             </div>
-          </div>
-          <div class="col order-first">
-            <!-- card 3 Fort Canning Park -->
-            <div class="card" style="width: 18rem">
-              <div id="article-spots-img3" class="article-spots"></div>
-              <div class="card-body">
-                <!-- <p class="card-text">Fort Canning Park</p> -->
-                <a href="#" class="card-link">Fort Canning Park</a>
-              </div>
+            <div class="col-sm-6 col-md-5 border bg-light weather-col">
+              <div id="weather-display"></div>
+              <div id="weather-4d-display"></div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- End of columns -->
-    </article>
+      </section>
+    </div>
 
     <!-- third-party -->
     <script src="script/bootstrap.bundle.min.js"></script> <!-- Bootstrap js Bundle with Popper -->
