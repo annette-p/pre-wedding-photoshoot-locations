@@ -73,7 +73,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       await searchNParks(query)
       // parkData is new variable / aka let parkData = await searchNParks(query)
       .then( (parkData) => {
-        addLocationsToMap(parkData, parkSearchMapLayer, natureIcon, map);  // plot marker onto the map 
+        addLocationsToMap(parkData, circleGroupLayer, parkSearchMapLayer, natureIcon, map);  // plot marker onto the map 
         locationData = locationData.concat(parkData);  // combine 2 arrays data
 
         hrLine.style.display = "block";  // display hr line when search result display
@@ -89,7 +89,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       let center = map.getBounds().getCenter();
       let cityData = await searchLocations(center.lat, center.lng, query);
       
-      addLocationsToMap(cityData, citySearchMapLayer, indoorIcon, map);  // plot marker onto the map  
+      addLocationsToMap(cityData, circleGroupLayer, citySearchMapLayer, indoorIcon, map);  // plot marker onto the map  
       locationData = locationData.concat(cityData);
 
       hrLine.style.display = "block";  // display hr line when search result display
@@ -105,6 +105,19 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     // clear the search input
     document.querySelector("#search-input").value = "";
+
+    // clear search results
+    document.querySelector('#btn-reset').addEventListener("click", function (event) {
+      // clear layers
+      parkSearchMapLayer.clearLayers();
+      citySearchMapLayer.clearLayers();
+      circleGroupLayer.clearLayers();
+      searchResultLayer.innerHTML = "";
+      hrLine.style.display = "none";
+      clearBtn.style.display = "none";
+      document.querySelector("#search-input").value = "";
+      document.querySelector("input[name='explore']").checked = true;
+    })
   });
 
   /* ...................................View Recommendation ...............................................*/
@@ -113,7 +126,7 @@ window.addEventListener("DOMContentLoaded", async function () {
   let outdoorFamousSpotsLayer = L.layerGroup();
   await searchAttractions("outdoor")
   .then( (attractionData) => {
-    addLocationsToMap(attractionData, outdoorFamousSpotsLayer, outdoorFamousIcon, map);
+    addLocationsToMap(attractionData, circleGroupLayer, outdoorFamousSpotsLayer, outdoorFamousIcon, map);
   });
 
   document.querySelector("input[name=recommend-outdoor]").addEventListener("change", function (event) {
@@ -128,7 +141,7 @@ window.addEventListener("DOMContentLoaded", async function () {
   let indoorFamousSpotsLayer = L.layerGroup();
   await searchAttractions("indoor")
   .then( (attractionData) => {
-    addLocationsToMap(attractionData, indoorFamousSpotsLayer, indoorFamousIcon, map);
+    addLocationsToMap(attractionData, circleGroupLayer, indoorFamousSpotsLayer, indoorFamousIcon, map);
   });
 
   document.querySelector("input[name=recommend-indoor]").addEventListener("change", function (event) {
@@ -174,6 +187,7 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   /* 2-hours Weather Forecast */ 
   let forecast2Hr = document.querySelector("#forecast-2hr");
+  let timer2HrForecast = undefined;
 
   forecast2Hr.addEventListener ("click", async function () {
     // clear the layers for 2hr & 24hr layers
@@ -188,6 +202,18 @@ window.addEventListener("DOMContentLoaded", async function () {
       let weatherDataFor2Hr = weatherData
       display2hrWeather(weatherDataFor2Hr, display2hrWeatherLayer, map)
     })
+
+    // check for update on 2-hr weather forecast every 10 min
+    timer2HrForecast = setInterval( async function() {
+      console.log(new Date());
+
+      await getWeatherData(weather2hrAPI)
+      .then( (weatherData) => {
+        let weatherDataFor2Hr = weatherData
+        display2hrWeather(weatherDataFor2Hr, display2hrWeatherLayer, map)
+      })
+    }, 600000); // 600000 ms = 10 min
+
   });
 
   /* 24-hours Weather Forecast */ 
@@ -240,6 +266,9 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     forecast24Hr.addEventListener("click", function () {
 
+      // stop scheduled 10-min polling for 2-hours weather data
+      clearInterval(timer2HrForecast);
+
       // clear the layers for 2hr & 24hr layers
       display2hrWeatherLayer.clearLayers();
       display24hrWeatherLayers.map( a => map.removeLayer(Object.values(a)[0]) );
@@ -273,6 +302,7 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   })
 
+
   /* 4-days Weather Forecast */
 
   // store the 4-days weather data
@@ -284,9 +314,16 @@ window.addEventListener("DOMContentLoaded", async function () {
   });
 
   
-
   let forecast4Day = document.querySelector("#forecast-4days");
   forecast4Day.addEventListener ("click", async function () {
+
+    // stop scheduled 10-min polling for 2-hours weather data
+    clearInterval(timer2HrForecast);
+
+    // clear the layers for 2hr & 24hr layers
+    display2hrWeatherLayer.clearLayers();
+    display24hrWeatherLayers.map( a => map.removeLayer(Object.values(a)[0]) );
+    
     // hide the display result div for 24 hours weather forecast
     forecast24hDisplayResult.style.display = "none"
     // show the display result div for 4 days weather forecast
@@ -299,9 +336,9 @@ window.addEventListener("DOMContentLoaded", async function () {
     } else {
       weatherAnnime.style.display = "none";
     }
-    
+
     /*
-    code in CSS: 
+    styling: 
     weatherAnnime.style.backgroundImage = 'url("../images/animated_weather_icon.gif")'
     weatherAnnime.style.backgroundPosition = "center"
     weatherAnnime.style.backgroundSize = "cover";

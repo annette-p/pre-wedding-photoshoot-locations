@@ -45,6 +45,11 @@ async function searchLocations(lat, lng, query) {
 
   let filteredLocations = [];
   for (let venue of response.data.response.venues) {
+    // skip if "country" is not Singapore
+    if (venue.location.country !== "Singapore") {
+      continue;
+    }
+    
     // short hand - new object (using Location class)
     filteredLocations.push(new Location(venue.name, venue.location.lat, venue.location.lng));
     /*

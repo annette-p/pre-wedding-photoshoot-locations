@@ -1,5 +1,5 @@
 // function to plot marker to the map (locationData is an array of objects from Location class)
-function addLocationsToMap(locationData, mapLayer, markerIcon, map) {
+function addLocationsToMap(locationData, circleGroupLayer, mapLayer, markerIcon, map) {
   mapLayer.clearLayers();
   for (let location of locationData) {
 
@@ -13,6 +13,24 @@ function addLocationsToMap(locationData, mapLayer, markerIcon, map) {
     }
     let plotMarker = L.marker(location.coordinates, {"title": location.name, "icon": markerIcon}).bindPopup(popupContent);
     mapLayer.addLayer(plotMarker);
+
+    // **** to fly to cordinate when click on marker ***
+    plotMarker.on("click", function(e){
+      map.flyTo(location.coordinates, 15);
+
+      // clear existing overlay for radius circle
+      circleGroupLayer.clearLayers();
+
+      // create within 500 meter radius circle
+      let circle = L.circle(location.coordinates, {
+        color: "red",
+        fillColor: "orange",
+        fillOpacity: 0.5,
+        radius: 1000,
+      });
+      circle.addTo(circleGroupLayer);
+      circle.bindPopup(`<b><i class="fas fa-walking"></i> within 1km from</b><h6>${location.name}</h6>`);
+    });
 
     // store reference to marker in Location object
     location.marker = plotMarker;
@@ -31,7 +49,7 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
     
     // to fly to markers when click
     resultDisplay.addEventListener("click", function () {
-      map.flyTo(location.coordinates, 16);
+      map.flyTo(location.coordinates, 15);
       location.marker.openPopup();
       // console.log(location.marker.getLatLng());
 
@@ -52,7 +70,7 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
 
   // Fly to first Location in the search result
   if (locationData.length > 0) {
-    map.flyTo(locationData[0].coordinates, 16);
+    map.flyTo(locationData[0].coordinates, 15);
     locationData[0].marker.openPopup();
 
     // clear existing overlay for radius circle
