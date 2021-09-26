@@ -1,22 +1,11 @@
 // Leaflet map: https://leafletjs.com/reference-1.7.1.html
 
 function mainMap() {
-  let singapore = [1.34, 103.85]; // [ <lat>, <lng> ]
   // locate leaflet zoom control in a desired position
   let map = L.map("map", {zoomControl: false})
   new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
-  // set for different screensize
-  // https://stackoverflow.com/questions/23910594/leaflet-responsive-design-creating-different-zoom-levels-for-different-screen
-  let width = document.documentElement.clientWidth;
-  let zoomLevel = 12;
-  if (width < 768) {
-    zoomLevel = 10.5; // phone - set the zoom level to 10
-  } else if (width < 992) {
-    zoomLevel = 11.5; // ipad
-  }
-
-  map.setView(singapore, zoomLevel);
+  setMapZoomLevel(map);
 
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
@@ -31,6 +20,21 @@ function mainMap() {
     }
   ).addTo(map);
   return map;
+}
+
+/* Set map zoom level for different screensize */
+function setMapZoomLevel(map) {
+  let singapore = [1.34, 103.85]; // [ <lat>, <lng> ]
+  // set for different screensize
+  // https://stackoverflow.com/questions/23910594/leaflet-responsive-design-creating-different-zoom-levels-for-different-screen
+  let width = document.documentElement.clientWidth;
+  let zoomLevel = 12;
+  if (width < 768) {
+    zoomLevel = 10.5; // phone - set the zoom level to 10
+  } else if (width < 992) {
+    zoomLevel = 11.5; // ipad
+  }
+  map.setView(singapore, zoomLevel);
 }
 
 /* ........................Location icons......................... */

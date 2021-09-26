@@ -17,6 +17,7 @@ function addLocationsToMap(locationData, circleGroupLayer, mapLayer, markerIcon,
     // **** to fly to cordinate when click on marker ***
     plotMarker.on("click", function(e){
       map.flyTo(location.coordinates, 15);
+      this.openPopup();
 
       // clear existing overlay for radius circle
       circleGroupLayer.clearLayers();
@@ -110,8 +111,9 @@ function displayRegions(regionData, mapLayer) {
 
     // get center coordinate of multi-polygon layer - on Leaflet
     let center = polygon.getBounds().getCenter()
-    // create Leaflet marker at the center coordinatr, with tooltip showing region name  // permanent: true >> is to always display
-    let marker = L.marker(center).bindTooltip(regionName, {permanent: true, direction:"center", className: 'polygon-labels'});
+    // create Leaflet marker at the center coordinates
+    // if want to display tooltip showing region name, put {permanent: true} >> is to always display
+    let marker = L.marker(center).bindTooltip(regionName, {direction:"center", className: 'polygon-labels'});
     mapLayer.addLayer(marker)
     mapLayer.addLayer(polygon)
   }

@@ -80,17 +80,18 @@ function display2hrWeather(weatherData, display2hrWeatherLayer, map){
         // **** to fly to cordinate when click on marker ***
         weatherMarker.on("click", function(e){
             map.flyTo(this.getLatLng(),16);
+            this.openPopup();
         }) 
         
     }
 
     // add marker with tooltip with start/end time the forecast is for
-    let displayCoordinate = [1.297, 103.944];
+    let displayCoordinate = [1.243, 103.844];
     let startTime = moment(weatherData.items[0].valid_period.start).format('h:mma DD MMM')
     let endTime = moment(weatherData.items[0].valid_period.end).format('h:mma DD MMM')
     let popupMsg = `<i>valid from</i> ${startTime} - ${endTime}`;
     let timeMarker = L.marker(displayCoordinate, {icon: clockIcon})
-                      .bindTooltip(popupMsg, {permanent: true, direction: 'right', opacity: 0.7});
+                      .bindTooltip(popupMsg, {permanent: true, direction: 'right', opacity: 0.7, offset: [15, 0]});
     display2hrWeatherLayer.addLayer(timeMarker);
 }
 
@@ -149,12 +150,12 @@ function prepareLayers24hrWeather(weatherData, map) {
         }
 
         // add marker with tooltip with start/end time the forecast is for
-        let displayCoordinate = [1.297, 103.944];
+        let displayCoordinate = [1.243, 103.844];
         let startTime = moment(weatherDataByTimeOfDay[i].time.start).format('h a DD MMM')
         let endTime = moment(weatherDataByTimeOfDay[i].time.end).format('h a DD MMM')
         let popupMsg = `<i>valid from</i> ${startTime} - ${endTime}`;
         let timeMarker = L.marker(displayCoordinate, {icon: clockIcon})
-                          .bindTooltip(popupMsg, {permanent: true, direction: 'right', opacity: 0.7})
+                          .bindTooltip(popupMsg, {permanent: true, direction: 'right', opacity: 0.7, offset: [15, 0]})
         weatherLayer.addLayer(timeMarker);
 
         // base on start hour of the forecast data, determine time of day (i.e. Morning, Afternoon, Night)

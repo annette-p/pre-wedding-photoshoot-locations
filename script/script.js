@@ -134,6 +134,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       map.addLayer(outdoorFamousSpotsLayer);
     } else {
       map.removeLayer(outdoorFamousSpotsLayer);
+      circleGroupLayer.clearLayers();
     }
   });
 
@@ -149,6 +150,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       map.addLayer(indoorFamousSpotsLayer);
     } else {
       map.removeLayer(indoorFamousSpotsLayer);
+      circleGroupLayer.clearLayers();
     }
   });
 
@@ -164,6 +166,7 @@ window.addEventListener("DOMContentLoaded", async function () {
   document.querySelector("input[name=show-region]").addEventListener("change", function (event) {
     if (this.checked) {
       map.addLayer(regionsLayer);
+      setMapZoomLevel(map);
     } else {
       map.removeLayer(regionsLayer);
     }
