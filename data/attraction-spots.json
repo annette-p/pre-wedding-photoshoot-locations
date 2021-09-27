@@ -4,132 +4,203 @@
         "name": "Jurong Lake Gardens",
         "latitude": 1.33605661779116,
         "longitude": 103.731160967029,
-        "image": null
+        "image": "images/famous_spots/jurong_lake_gardens.jpg"
     },
     {
         "type": "outdoor",
         "name": "Fort Canning Park",
         "latitude": 1.29177800435869,
         "longitude": 103.846609005448,
-        "image": "images/fort_canning_park.jpg"
+        "image": "images/famous_spots/fort_canning_park.jpg"
     },
     {
         "type": "outdoor",
         "name": "Coney Island Park",
         "latitude": 1.4099130157165,
         "longitude": 103.923130995416,
-        "image": null
+        "image": "images/famous_spots/coney_island.jpg"
     },
     {
         "type": "outdoor",
-        "name": "Lower Seletar Reservoir Park",
-        "latitude": 1.40997400015505,
-        "longitude": 103.832171003957,
-        "image": null
+        "name": "Seletar North Link",
+        "latitude": 1.42963,
+        "longitude": 103.88358,
+        "image": "images/famous_spots/seletar_north_link.jpg"
     },
     {
         "type": "outdoor",
-        "name": "Lower Peirce Reservoir (Pulau Punggol Barat)",
+        "name": "Lower Peirce Reservoir",
         "latitude": 1.36906501231608,
         "longitude": 103.826296008364,
-        "image": null
+        "image": "images/famous_spots/lower_peirce_reservoir.jpg"
+    },
+    {
+        "type": "outdoor",
+        "name": "Pulau Punggol Barat",
+        "latitude": 1.42829,
+        "longitude": 103.87660,
+        "image": "images/famous_spots/pulau_punggol_bharat.jpg"
     },
     {
         "type": "outdoor",
         "name": "East Coast Park",
         "latitude": 1.30316900590952,
         "longitude": 103.920605001614,
-        "image": null
+        "image": "images/famous_spots/east_coast_park.jpg"
     },
     {
         "type": "outdoor",
         "name": "Singapore Botanic Gardens",
         "latitude": 1.31104799117615,
         "longitude": 103.8162510018,
-        "image": null
+        "image": "images/famous_spots/singapore_botanic_gardens.png"
     },
     {
         "type": "outdoor",
         "name": "Henderson Waves Bridge @Telok Blangah Hill Park",
         "latitude": 1.27884500650228,
         "longitude": 103.810545004407,
-        "image": null
+        "image": "images/famous_spots/henderson_waves_bridge.jpg"
     },
     {
         "type": "outdoor",
         "name": "Punggol Beach",
         "latitude": 1.420425,
         "longitude": 103.913108,
-        "image": null
+        "image": "images/famous_spots/punggol_beach.jpg"
     },
     {
         "type": "outdoor",
         "name": "Punggol Waterway Park",
         "latitude": 1.4109970215842,
         "longitude": 103.904814998591,
-        "image": null
+        "image": "images/famous_spots/punggol_waterway_park.jpg"
     },
     {
         "type": "outdoor",
         "name": "Arab Street & Sultan Road",
         "latitude": 1.301989957970408,
         "longitude": 103.85854028003689,
-        "image": null
+        "image": "images/famous_spots/arab_street.png"
     },
     {
         "type": "outdoor",
         "name": "Haji Lane",
         "latitude": 1.30085852191063,
         "longitude": 103.85903287664408,
-        "image": null
+        "image": "images/famous_spots/haji_lane.jpg"
     },
     {
         "type": "outdoor",
         "name": "Helix Bridge",
         "latitude": 1.2824608777101612,
         "longitude": 103.85908126831055,
-        "image": null
+        "image": "images/famous_spots/helix_bridge.jpg"
     },
     {
         "type": "outdoor",
         "name": "Lorong Halus Bridge",
         "latitude": 1.3964004037229598,
         "longitude": 103.92206642034016,
-        "image": null
+        "image": "images/famous_spots/lorong_halus_bridge.jpg"
     },
     {
         "type": "outdoor",
         "name": "Marina Barrage",
         "latitude": 1.2813131795563675,
         "longitude": 103.87246012687683,
-        "image": null
+        "image": "images/famous_spots/marina_barrage.jpg"
     },
     {
         "type": "outdoor",
         "name": "Raffles Marina Lighthouse",
         "latitude": 1.3444250757766607,
         "longitude": 103.63396883010864,
-        "image": null
+        "image": "images/famous_spots/raffles_marina_lighthouse.jpg"
     },
     {
         "type": "outdoor",
         "name": "Tanjong Rhu Bridge",
         "latitude": 1.2987944032897896,
         "longitude": 103.87742757797241,
-        "image": null
+        "image": "images/famous_spots/tanjong_rhu_bridge.jpg"
     },
     {
         "type": "outdoor",
         "name": "Orchard Road",
         "latitude": 1.303618,
         "longitude": 103.835767,
-        "image": null
+        "image": "images/famous_spots/orchard_road.jpg"
+    },
+
+    {
+        "type": "indoor",
+        "name": "ArtScience Museum",
+        "latitude": 1.2863578168060021,
+        "longitude": 103.85944922810626,
+        "image": "images/famous_spots/artscience_museum.jpg"
+    },
+    {
+        "type": "indoor",
+        "name": "Chek Jawa House No. 1",
+        "latitude": 1.4084473292098414,
+        "longitude": 103.98924265995552,
+        "image": "images/famous_spots/chek_jawa_house2.jpg"
+    },
+    {
+        "type": "indoor",
+        "name": "CHIJMES",
+        "latitude": 1.2950704205410113,
+        "longitude": 103.85212810975624,
+        "image": "images/famous_spots/chijmes.jpg"
     },
     {
         "type": "indoor",
         "name": "Gardens by the Bay",
         "latitude": 1.2839196334992269,
         "longitude": 103.86589944362639,
-        "image": null
+        "image": "images/famous_spots/gardens_by_the_bay2.jpg"
+    },
+    {
+        "type": "indoor",
+        "name": "Jewel @ Changi Airport",
+        "latitude": 1.3601193630734352,
+        "longitude": 103.98978968138972,
+        "image": "images/famous_spots/changi-airport_jewel_antelope.jpg"
+    },
+    {
+        "type": "indoor",
+        "name": "Kombi Rocks Diner",
+        "latitude": 1.35752,
+        "longitude": 103.87549,
+        "image": "images/famous_spots/kombi_rocks_diner.jpg"
+    },
+    {
+        "type": "indoor",
+        "name": "National Gallery Singapore",
+        "latitude": 1.2907395913341984,
+        "longitude": 103.85154786540198,
+        "image": "images/famous_spots/national_gallery_singapore.jpg"
+    },
+    {
+        "type": "indoor",
+        "name": "Pasir Panjang Power Station",
+        "latitude": 1.2704164572171917,
+        "longitude": 103.79847809672354,
+        "image": "images/famous_spots/pasir_panjang_power_station.jpg"
+    },
+    {
+        "type": "indoor",
+        "name": "Raffles Hotel",
+        "latitude": 1.2957404567877915,
+        "longitude": 103.85382956118796,
+        "image": "images/famous_spots/raffles_hotel2.jpg"
+    },
+    {
+        "type": "indoor",
+        "name": "Universal Studio Singapore",
+        "latitude": 1.254044,
+        "longitude": 103.82381,
+        "image": "images/famous_spots/universal_studios.jpg"
     }
 ]

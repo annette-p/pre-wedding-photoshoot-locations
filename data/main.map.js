@@ -30,11 +30,23 @@ function setMapZoomLevel(map) {
   let width = document.documentElement.clientWidth;
   let zoomLevel = 12;
   if (width < 768) {
-    zoomLevel = 10.5; // phone - set the zoom level to 10
+    zoomLevel = 10; // phone - set the zoom level to 10
   } else if (width < 992) {
-    zoomLevel = 11.5; // ipad
+    zoomLevel = 11; // ipad
   }
   map.setView(singapore, zoomLevel);
+}
+
+/* Set fly-to zoom level for different screensize */
+function getFlyToZoomLevel() {
+  let width = document.documentElement.clientWidth;
+  let zoomLevel = 15;
+  if (width < 768) {
+    zoomLevel = 13.5; // phone
+  } else if (width < 992) {
+    zoomLevel = 14.5; // ipad
+  }
+  return zoomLevel
 }
 
 /* ........................Location icons......................... */

@@ -79,7 +79,7 @@ function display2hrWeather(weatherData, display2hrWeatherLayer, map){
         display2hrWeatherLayer.addLayer(weatherMarker)
         // **** to fly to cordinate when click on marker ***
         weatherMarker.on("click", function(e){
-            map.flyTo(this.getLatLng(),16);
+            map.flyTo(this.getLatLng(), getFlyToZoomLevel());
             this.openPopup();
         }) 
         
@@ -145,7 +145,7 @@ function prepareLayers24hrWeather(weatherData, map) {
 
             // **** to fly to cordinate when click on marker ***
             weatherMarker.on("click", function(e){
-                map.flyTo(this.getLatLng(),16);
+                map.flyTo(this.getLatLng(), getFlyToZoomLevel());
             }) 
         }
 

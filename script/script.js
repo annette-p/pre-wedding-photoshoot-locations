@@ -1,7 +1,10 @@
 window.addEventListener("DOMContentLoaded", async function () {
   // calling leaflet map function
-  // https://stackoverflow.com/questions/42204194/leaflet-only-renders-into-one-corner
-  // -> when initializing the map on a hidden or zero-size container, the map will not render properly
+  /*
+  when initializing the map on a hidden or zero-size container, the map will not render properly
+  https://stackoverflow.com/questions/42204194/leaflet-only-renders-into-one-corner
+  solution: make the map container visible first when loaded then hide the map
+  */
   document.querySelector("#map-page").style.display = "block";
   let map = mainMap();
   document.querySelector("#map-page").style.display = "none";
@@ -122,6 +125,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     })
   }
 
+  // on landing page, perform search 
   document.querySelector("#home-search-btn").addEventListener("click", async function(event) {
     event.preventDefault();
     let query = document.querySelector("#home-search-input").value;
@@ -131,6 +135,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     
   });
 
+  // on map page, perform search 
   document.querySelector("#search-btn").addEventListener("click", async function (event) {
     event.preventDefault();
     let query = document.querySelector("#search-input").value;

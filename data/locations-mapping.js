@@ -16,7 +16,7 @@ function addLocationsToMap(locationData, circleGroupLayer, mapLayer, markerIcon,
 
     // **** to fly to cordinate when click on marker ***
     plotMarker.on("click", function(e){
-      map.flyTo(location.coordinates, 15);
+      map.flyTo(location.coordinates, getFlyToZoomLevel());
       this.openPopup();
 
       // clear existing overlay for radius circle
@@ -50,7 +50,7 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
     
     // to fly to markers when click
     resultDisplay.addEventListener("click", function () {
-      map.flyTo(location.coordinates, 15);
+      map.flyTo(location.coordinates, getFlyToZoomLevel());
       location.marker.openPopup();
       // console.log(location.marker.getLatLng());
 
@@ -71,7 +71,7 @@ function addLocationsToSearchResultDisplay(locationData, circleGroupLayer, searc
 
   // Fly to first Location in the search result
   if (locationData.length > 0) {
-    map.flyTo(locationData[0].coordinates, 15);
+    map.flyTo(locationData[0].coordinates, getFlyToZoomLevel());
     locationData[0].marker.openPopup();
 
     // clear existing overlay for radius circle
