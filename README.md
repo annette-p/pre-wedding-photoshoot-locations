@@ -1,5 +1,9 @@
 # Pre-wedding Photoshoot Locations
 
+## Demo
+
+A live website of the application can be found here: https://annette-p.github.io/pre-wedding-photoshoot-locations/
+
 ## Company and Product Summary
 
 Bridal rental business: an online rental business specialised in bridal services from bridal rental (ranging from pre-wedding, ROM, receptions and etc), photography and video motion services. 
