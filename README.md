@@ -161,6 +161,8 @@ Refer to [report](project_report.pdf) for details on the following areas:
 
 * Credit data for Park, Singapore regions boundary and weather data to data.gov.sg
 * Venue data are from foursquare.com
+* Device simulator application 
+  * http://www.responsinator.com/
 * Images are from: 
   * https://singaporebrides.com/
   * https://www.xeplanner.com/
