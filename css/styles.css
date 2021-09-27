@@ -142,6 +142,17 @@
   font-size: small;
 }
 
+.disabled {
+  color: rgb(92, 87, 87);
+  font-style: italic;
+}
+
+.beta {
+  color: red;
+  font-variant: small-caps;
+  font-style: oblique;
+}
+
 #search-result-display {
   overflow-y: auto;
   max-height:150px;
