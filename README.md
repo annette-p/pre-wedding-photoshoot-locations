@@ -143,9 +143,9 @@ Refer to this [colour palette](green_grey_palate.pdf).
 
 Refer to [report](project_report.pdf) for details on the following areas:
 
-* Release planning (Tasks feature break down) 
-* Agile estimation (Sprint planning)
-* Test Case and Acceptance Criteria 
+* **Release planning (Tasks feature break down)** 
+* **Agile estimation (Sprint planning)**
+* **Test Case and Acceptance Criteria**
 
 ## Future development features
 
