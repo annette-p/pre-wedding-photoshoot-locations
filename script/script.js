@@ -1,4 +1,14 @@
 window.addEventListener("DOMContentLoaded", async function () {
+
+  // add "click" event listener to photos on home page
+  let linksPopularSpots = document.querySelectorAll("#link-popular-spot");
+  linksPopularSpots.forEach( (link) => {
+    link.addEventListener("click", function(event) {
+      window.open("#", "popup", 'width=600,height=600,scrollbars=no,resizable=no');
+      return false;
+    })
+  })
+  
   // calling leaflet map function
   /*
   when initializing the map on a hidden or zero-size container, the map will not render properly
