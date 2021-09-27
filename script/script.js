@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", async function () {
 
-  // add "click" event listener to photos on home page
+  // add "click" event listener to popup new window for aritcle section in landing page
   let linksPopularSpots = document.querySelectorAll("#link-popular-spot");
   linksPopularSpots.forEach( (link) => {
     link.addEventListener("click", function(event) {
@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       return false;
     })
   })
-  
+
   // calling leaflet map function
   /*
   when initializing the map on a hidden or zero-size container, the map will not render properly
@@ -384,5 +384,31 @@ window.addEventListener("DOMContentLoaded", async function () {
     */
 
   });
+
+  let arrowPanel = document.querySelector("#arrow-panel");
+  let width = document.documentElement.clientWidth;
+  if (width < 768) {
+    arrowPanel.classList.add("fas", "fa-angle-double-down")
+    forecast24Hr.style.display = "none";
+    forecast4Day.style.display = "none";
+    forecast2Hr.style.display = "none";
+
+    arrowPanel.addEventListener("click", (event) => {
+      if (arrowPanel.classList.contains("fa-angle-double-down")) {
+        arrowPanel.classList.remove("fas", "fa-angle-double-down");
+        arrowPanel.classList.add("fas", "fa-angle-double-up");
+        forecast24Hr.style.display = "block";
+        forecast4Day.style.display = "block";
+        forecast2Hr.style.display = "block"
+      } else {
+        arrowPanel.classList.remove("fas", "fa-angle-double-up");
+        arrowPanel.classList.add("fas", "fa-angle-double-down");
+        forecast24Hr.style.display = "none";
+        forecast4Day.style.display = "none";
+        forecast2Hr.style.display = "none";
+      }
+    });
+
+  }
 
 });

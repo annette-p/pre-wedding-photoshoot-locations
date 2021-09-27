@@ -289,6 +289,7 @@ h6 {
   background-color: rgb(245, 245, 159);
   font-size: 15px;
   margin-top: 15px;
+  margin-left: 15px;
   padding-right: 25px;
 }
 
@@ -435,6 +436,7 @@ h6 {
   .btn-custom {
     font-size: 19px;
     margin-top: 15px;
+    margin-left: -3px;
   }
 
   #forecast-24hr {
@@ -537,7 +539,7 @@ h6 {
   }
 
   #weather-btn-col {
-    padding-left: 50px;
+    padding-left: 40px;
     padding-top: 20px;
     padding-bottom: 10px;
   }
