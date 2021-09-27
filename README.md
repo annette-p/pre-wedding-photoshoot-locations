@@ -4,26 +4,18 @@
 
 Bridal rental business: an online rental business specialised in bridal services from bridal rental (ranging from pre-wedding, ROM, receptions and etc), photography and video motion services. 
 
-<br>
-
 ### User goal
 
 
 Ability to plan different outdoor locations and what’s nearby for pre-wedding photoshoot in advance. 
 
-<br>
-
 ### Product goal
 
 Provide ability to view locations (by query, recommendation, by region) and its relative weather & temperature of respective days for better planning especially for outdoor photoshoot plan. 
 
-<br>
-
 ## Product & Features
 
 This is a single page application. The page is divided into 2 sections, the landing page and the map page.
-
-<br>
 
 ### Landing Page
 <br>
@@ -32,7 +24,6 @@ This is a single page application. The page is divided into 2 sections, the land
 
 On the landing page, the app will first address to the users with greetings and a search bar to encourage user to type something to search. The map section will be triggered when the user presses down the "Enter" key or click on the search button.
 
-<br>
 
 ### Map Navigation Page
 <br>
@@ -81,7 +72,6 @@ Navigation bar section:
 
 For more details on device simulation, refer [here](device_simulator.pdf)
 
-<br>
 
 ## Technologies Used
 
@@ -110,44 +100,30 @@ For more details on device simulation, refer [here](device_simulator.pdf)
 * **Singapore regions boundary (geojson MultiPolygon)**
 <br>To provide indicative polygon of region boundary, divides Singapore into regions to plot on Leaflet map
 
-<br>
 
 ## User Experience (UX)
-<br>
 
 ### User Persona
 
 Refer to [report](project_report.pdf) for details
 
-<br>
-
 ### Wireframe
 
 For full details of wireframe, refer [here](wireframe.pdf).
 
-<br>
-
 ### Surface Plane
-
-<br>
 
 **Responsiveness**
 
 This website is responsive to small, medium and large screen sizes. It is a mobile first approach application.
 
-<br>
-
 **Colours**
 
 Refer to this [colour palette](green_grey_palate.pdf).
 
-<br>
-
 **Typography**
 
 **Google font (Montserrat, sans-serif)**: its simple geometric letters which make the design appealing and have a large X-height. It provides the vibes of trust and can go best with maximum fonts. The font has a charming tale, features friendly and open curves.  This makes for a more natural reading rhythm more commonly found in humanist and serif types.
-
-<br>
 
 **Layout**
 
@@ -155,11 +131,7 @@ Refer to this [colour palette](green_grey_palate.pdf).
 
 **The element view hight (vh)** is designed at 80% view hight of the screen in order to have other element sections appear on the screen in the same time. This is to inform users to scroll down for other details. 
 
-<br>
-
 ## Software Application Development
-
-<br>
 
 ### Product prioritization
 
@@ -168,7 +140,6 @@ Refer to this [colour palette](green_grey_palate.pdf).
 <br>
 
 ### Estimation and Planning
-<br>
 
 Refer to [report](project_report.pdf) for details on the following areas:
 
@@ -176,15 +147,11 @@ Refer to [report](project_report.pdf) for details on the following areas:
 * Agile estimation (Sprint planning)
 * Test Case and Acceptance Criteria 
 
-<br>
-
 ## Future development features
 
 * Show nearby restaurants & toilets 
 * Show nearby carpark availability 
 * Fourquare Photo API 
-
-<br>
 
 ## References
 
